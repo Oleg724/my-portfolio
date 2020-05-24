@@ -1,0 +1,34 @@
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
+    width: 60%;
+    font-size: 21px;
+    opacity: 0;
+    animation: header-appearence;
+    animation-delay: 2s;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+}
+
+.header__item {
+    border-bottom: 3px solid transparent;
+    transition: all .6s;
+}
+
+.header__item:hover {
+    cursor: pointer;
+    border-bottom: 3px solid #ffffff;
+    color: #e31b6d;
+}
+
+@keyframes header-appearence {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

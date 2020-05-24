@@ -1,0 +1,8 @@
+.number-three {
+    fill: none;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    stroke-dashoffset: 680;
+    stroke-dasharray: 680;
+    animation: number-appearence 5s ease-out .5s forwards;
+}

@@ -1,0 +1,8 @@
+.number-five {
+    fill: none;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    stroke-dashoffset: 612;
+    stroke-dasharray: 612;
+    animation: number-appearence 5s ease-out .5s forwards;
+}

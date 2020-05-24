@@ -1,0 +1,58 @@
+.map {
+    width: 68%;
+    min-width: 570px;
+    position: relative;
+}
+
+.map__image {
+    fill: none;
+    stroke: #ffffff;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3px;
+    stroke-dashoffset: 7001;
+    stroke-dasharray: 7001;
+    animation: map-painting 20s infinite ease-out;
+}
+
+.map:before {
+    content: '';
+    display: block;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    box-shadow: 0 0 7px #00e6c0, 0 0 10px #00e6c0;
+    background-color: #00e6c0;
+    top: 49%;
+    left: 20%;
+    animation: appearence 3s ease-out;
+    animation-delay: 10s;
+}
+
+.map__text {
+    display: inline-block;
+    top: 43%;
+    left: 15%;
+    font-size: 17px;
+    animation: appearence 3s ease-out 15s;
+}
+
+.map:before,
+.map__text {
+    position: absolute;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    transition: all 3s ease-out;
+}
+
+@keyframes appearence {
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes map-painting {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}

@@ -1,0 +1,40 @@
+.list {
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.list > p {
+    text-align: end;
+}
+
+.list__item:after {
+    content: '';
+    display: block;
+    background-color: #ffffff;
+    position: absolute;
+    right: 0;
+}
+
+.list__list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
+.list__item {
+    padding: 5px 10px;
+    position: relative;
+}
+
+.list__item:after {
+    width: 1px;
+    height: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.list__item:last-child:after {
+    display: none;
+}

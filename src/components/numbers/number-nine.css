@@ -1,0 +1,8 @@
+.number-nine {
+    fill: none;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    stroke-dashoffset: 492;
+    stroke-dasharray: 492;
+    animation: number-appearence 5s ease-out .5s forwards;
+}

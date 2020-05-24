@@ -1,0 +1,13 @@
+.headline {
+    color: #e31b6d;
+    font-size: 18px;
+}
+
+.headline:after {
+    content: '';
+    display: block;
+    background-color: #ffffff;
+    width: 10em;
+    height: 1px;
+    margin: 5px 0 7px;
+}

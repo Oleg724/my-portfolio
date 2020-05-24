@@ -1,0 +1,35 @@
+.number-one {
+    width: 45px;
+}
+
+.number-one__one {
+    fill:#ef525b;
+}
+
+.number-one__one,
+.number-one__two {
+    fill-rule:evenodd;
+}
+
+.number-one__two {
+    fill:#042f45;
+    opacity: 0;
+    animation: shadow-appearence 3s ease-out 3s forwards;
+}
+
+.path-one {
+    stroke-dasharray: 50;
+    stroke-dashoffset: 50;
+}
+
+@keyframes appearence {
+    100% {
+        
+    }
+}
+
+@keyframes shadow-appearence {
+    100% {
+        opacity: 0.56;
+    }
+}

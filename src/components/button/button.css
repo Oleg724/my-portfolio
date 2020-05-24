@@ -1,0 +1,47 @@
+.button {
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    color: #ffffff;
+    background-color: transparent;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    padding: 10px;
+    transition: all .2s ease-out;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.button:hover {
+    background-color: #00ccaa;
+    border: 1px solid #00ccaa;
+    cursor: pointer;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:before {
+    content: '';
+    width: 2em;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, .6);
+    transform: translateX(-4em) skewX(-45deg);
+    animation: move-light 5s infinite;
+    animation-delay: 5s;
+}
+
+@keyframes move-light {
+    from {
+        transform: translateX(-4em) skewX(-45deg);
+    }
+
+    to {
+        transform: translateX(200em) skewX(-45deg);
+    }
+        
+}
+   

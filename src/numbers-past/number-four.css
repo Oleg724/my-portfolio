@@ -1,0 +1,13 @@
+.number-four-1 {
+    fill:#92ddb7;
+}
+
+.number-four-1,
+.number-four-2 {
+    fill-rule:evenodd;
+}
+
+.number-four-2 {
+    fill:#042f45;
+    opacity:0.56;
+}

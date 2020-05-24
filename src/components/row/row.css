@@ -1,0 +1,18 @@
+.row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.col-md-6 {
+    width: 50%;
+}
+
+.col-md-6:nth-child(1) {
+    align-self: flex-start;
+}
+
+.col-md-6:nth-child(2) {
+    align-self: center;
+}

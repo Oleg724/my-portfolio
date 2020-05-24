@@ -1,0 +1,8 @@
+.number-two path {
+    fill: none;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    stroke-dashoffset: 585;
+    stroke-dasharray: 585;
+    animation: number-appearence 5s ease-out .5s forwards;
+}

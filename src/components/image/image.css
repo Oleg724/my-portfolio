@@ -1,0 +1,27 @@
+.image {
+    display: block;
+    transition: all .8s;
+}
+
+.image:hover {
+    cursor: pointer;
+}
+
+.image--md {
+    width: 408px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 
+        0 0 5px #ffffff, 
+        0 0 7px #00e6c0, 
+        0 0 12px #ffffff, 
+        0 0 15px #ffffff, 
+        0 0 20px #ffffff, 
+        0 0 35px #ffffff;
+}
+
+.image--sm {
+    height: 100%;
+    transition: all .8s;
+}

@@ -1,0 +1,11 @@
+.tooltip-image-hover {
+    opacity: 0;
+    animation: tooltip-appearence .5s ease-out forwards;
+    text-align: center;
+}
+
+@keyframes tooltip-appearence {
+    100% {
+        opacity: 1;
+    }
+}

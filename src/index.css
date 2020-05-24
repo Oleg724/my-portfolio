@@ -1,13 +1,51 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-ExtraLight.ttf') format('truetype');
+    src: url('./assets/fonts/Raleway-ExtraLight.otf') format('opentype');
+    font-weight: 200;
+    font-style: normal;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+@font-face {
+    font-family: 'Raleway';
+    src: url('./assets/fonts/Raleway-Light.ttf') format('truetype');
+    src: url('./assets/fonts/Raleway-Light.otf') format('opentype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 50px;
+    font-weight: 200;
+    width: 100%;
+    height: 100%;
+    background-color: #252934;
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+#root {
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
 }

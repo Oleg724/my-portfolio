@@ -1,0 +1,13 @@
+.number-eight-1 {
+    fill:#ef525b;
+}
+
+.number-eight-1,
+.number-eight-2 {
+    fill-rule:evenodd;
+}
+
+.number-eight-2 {
+    fill:#042f45;
+    opacity:0.56;
+}

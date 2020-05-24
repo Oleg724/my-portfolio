@@ -1,0 +1,15 @@
+.languages {
+    display: flex;
+    font-size: 21px;
+}
+
+.languages__item {
+    display: inline-block;
+    margin-right: 20px;
+    transition: all .6s;
+}
+
+.languages__item:hover {
+    cursor: pointer;
+    color: #e31b6d;
+}

@@ -1,0 +1,13 @@
+.number-seven-1 {
+    fill:#eae7d6;
+}
+
+.number-seven-1,
+.number-seven-2 {
+    fill-rule:evenodd;
+}
+
+.number-seven-2 {
+    fill:#042f45;
+    opacity:0.56;
+}

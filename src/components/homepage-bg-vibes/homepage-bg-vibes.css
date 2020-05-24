@@ -1,0 +1,286 @@
+.cls-1,
+.cls-2,
+.cls-3,
+.cls-4,
+.cls-5,
+.cls-6,
+.cls-7,
+.cls-8,
+.cls-9,
+.cls-10,
+.cls-11,
+.cls-12,
+.cls-13 {
+    fill:none;
+    stroke:#ffffff;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+}
+
+.cls-1 {
+    stroke-width:0.5px;
+    stroke-dasharray: 257;
+    stroke-dashoffset: 257;
+    animation: circle-painting 10s infinite 3s ease-in;
+}
+
+.cls-2 {
+    stroke-width:1.01px;
+    stroke-dasharray: 1075;
+    stroke-dashoffset: 1075;
+}
+
+.cls-3 {
+    stroke-width:1.02px;
+    stroke-dasharray: 1075;
+    stroke-dashoffset: 1075;
+}
+
+.cls-4 {
+    stroke-width:1.04px;
+    stroke-dasharray: 1031;
+    stroke-dashoffset: 1031;
+}
+
+.cls-5 {
+    stroke-width:1.05px;
+    stroke-dasharray: 1034;
+    stroke-dashoffset: 1034;
+}
+
+.cls-6 {
+    stroke-width:1.06px;
+    stroke-dasharray: 1042;
+    stroke-dashoffset: 1042;
+}
+
+.cls-7 {
+    stroke-width:1.08px;
+    stroke-dasharray: 1055;
+    stroke-dashoffset: 1055;
+}
+
+.cls-8 {
+    stroke-width:1.09px;
+    stroke-dasharray: 1074;
+    stroke-dashoffset: 1074;
+}
+
+.cls-9 {
+    stroke-width:1.1px;
+    stroke-dasharray: 1097;
+    stroke-dashoffset: 1097;
+}
+
+.cls-10 {
+    stroke-width:1.12px;
+    stroke-dasharray: 1128;
+    stroke-dashoffset: 1128;
+}
+
+.cls-11 {
+    stroke-width:1.13px;
+    stroke-dasharray: 1159;
+    stroke-dashoffset: 1159;
+}
+
+.cls-12 {
+    stroke-width:1.15px;
+    stroke-dasharray: 1195;
+    stroke-dashoffset: 1195;
+} 
+
+.cls-13 {
+    stroke-width:1.16px;
+    stroke-dasharray: 1233;
+    stroke-dashoffset: 1233;
+}
+
+.cls-14 {
+    fill:#e31b6d;
+    opacity: 0;
+    stroke-dasharray: 1233;
+    stroke-dashoffset: 1233;
+}
+
+.line-2 {
+    animation: lines-painting 15s ease-out forwards;
+}
+
+.line-3 {
+    animation: lines-painting 14.5s ease-out .5s forwards;
+}
+
+.line-4 {
+    animation: lines-painting 14s ease-out 1s forwards;
+}
+
+.line-5 {
+    animation: lines-painting 13.5s ease-out 1.5s forwards;
+}
+
+.line-6 {
+    animation: lines-painting 13s ease-out 2s forwards;
+}
+
+.line-7 {
+    animation: lines-painting 12.5s ease-out 2.5s forwards;
+}
+
+.line-8 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-9 {
+    animation: lines-painting 10s ease-out 5s forwards;
+}
+
+.line-10 {
+    animation: lines-painting 7s ease-out 5.5s forwards;
+}
+
+.line-11 {
+    animation: lines-painting 11.8s ease-out 3.2s forwards;
+}
+
+.line-12 {
+    animation: lines-painting 13s ease-out 2s forwards;
+}
+
+.line-13 {
+    animation: lines-painting 12.5s ease-out 2.5s forwards;
+}
+
+.line-14 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-15 {
+    animation: lines-painting 13s ease-out 2s forwards;
+}
+
+.line-16 {
+    animation: lines-painting 12.5s ease-out 2.5s forwards;
+}
+
+.line-17 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-18 {
+    animation: lines-painting 13s ease-out 2s forwards;
+}
+
+.line-19 {
+    animation: lines-painting 12.5s ease-out 2.5s forwards;
+}
+
+.line-20 {
+    animation: lines-painting 11.2s ease-out 3.8s forwards;
+}
+
+.line-21 {
+    animation: lines-painting 10.5s ease-out 4.5s forwards;
+}
+
+.line-22 {
+    animation: lines-painting 9s ease-out 6s forwards;
+}
+
+.line-23 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-24 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-25 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-26 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-27 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-28 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-29 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-30 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-31 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-32 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-33 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-34 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.line-35 {
+    animation: lines-painting 12s ease-out 3s forwards;
+}
+
+.point-36 {
+    animation: point-appearence 3s ease-out 17s forwards;
+}
+
+.point-37 {
+    animation: point-appearence 3s ease-out 17s forwards;
+}
+
+.point-38 {
+    animation: point-appearence 3s ease-out 19s forwards;
+}
+
+.point-39 {
+    animation: point-appearence 3s ease-out 19s forwards;
+}
+
+.point-40 {
+    animation: point-appearence 3s ease-out 20s forwards;
+}
+
+.point-41 {
+    animation: point-appearence 3s ease-out 20s forwards;
+}
+
+.point-42 {
+    animation: point-appearence 3s ease-out 17s forwards;
+}
+
+@keyframes lines-painting {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes circle-painting {
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes point-appearence {
+    100% {
+        opacity: 1;
+    }
+}

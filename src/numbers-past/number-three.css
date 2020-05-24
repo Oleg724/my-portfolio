@@ -1,0 +1,13 @@
+.number-three-1 {
+    fill:#24c2cb;
+}
+
+.number-three-1,
+.number-three-2 {
+    fill-rule:evenodd;
+}
+
+.number-three-2 {
+    fill:#042f45;
+    opacity:0.56;
+}

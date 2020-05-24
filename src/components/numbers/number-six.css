@@ -1,0 +1,8 @@
+.number-six {
+    fill: none;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    stroke-dashoffset: 483;
+    stroke-dasharray: 483;
+    animation: number-appearence 5s ease-out .5s forwards;
+}

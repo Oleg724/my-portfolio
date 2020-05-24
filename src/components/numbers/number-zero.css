@@ -1,0 +1,7 @@
+.number-zero {
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 315;
+    stroke-dashoffset: 315;
+    animation: number-appearence 5s ease-out .5s forwards;
+}

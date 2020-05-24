@@ -1,0 +1,8 @@
+.number-seven {
+    fill: none;
+    stroke: #ffffff;
+    stroke-miterlimit: 10;
+    stroke-dashoffset: 416;
+    stroke-dasharray: 416;
+    animation: number-appearence 5s ease-out .5s forwards;
+}
