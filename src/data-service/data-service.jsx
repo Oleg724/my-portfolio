@@ -63,8 +63,6 @@ export default class DataService extends Component {
                     and the actual coordinates are displayed.
                     When you select a point on the world map, the selected option automatically changes on 
                     all pages (except the first).
-                    There are duplicate components, because when creating it, I have not yet mastered
-                    the correct technique for reusing components.
                     React is not the best solution for this type of layout.`,
                     'browsers-tested': `Chrome, Opera, Firefox, Microsoft Edge`,
                     adaptivity: 'done', 
