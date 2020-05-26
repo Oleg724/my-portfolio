@@ -3,7 +3,7 @@
     line-height: 1.9;
 }
 
-.record span {
+.record span:first-child {
     color: #e31b6d;
 }
 

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import PropTypes from 'prop-types';
+
 const withArrowsFunctions = (getDataArr) => (Wrapped) => {
 
     const data = getDataArr();
@@ -34,6 +36,10 @@ const withArrowsFunctions = (getDataArr) => (Wrapped) => {
 
         return <Wrapped { ...props } { ...wrappedProps } />;
     };
+};
+
+withArrowsFunctions.propTypes = {
+    getArray: PropTypes.func.isRequired,
 };
 
 export default withArrowsFunctions;

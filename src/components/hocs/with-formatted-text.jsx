@@ -1,6 +1,8 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 
-const withFormattedText = (title, text) => (Wrapped) => {
+import PropTypes from 'prop-types';
+
+const withFormattedText = (title, text, idForKey) => (Wrapped) => {
 
     let result;
 
@@ -15,17 +17,16 @@ const withFormattedText = (title, text) => (Wrapped) => {
         || title === 'github' 
         || title === 'посилання' 
         || title === 'ссылка') {
-            const link = <a { ...linkProps } >{ text }</a>;
-            result = link;
+            result = <a { ...linkProps } >{ text }</a>;
     }
     else if (title === 'used technologies' 
         || title === 'використані технології' 
         || title === 'использованные технологии') {
             const formattedText = text.map( (technology, idx, arr) => {
                 return (
-                    <Fragment> 
+                    <span key={ technology } > 
                         { technology }{ idx !== arr.length - 1 && ',' } 
-                    </Fragment>
+                    </span>
                 )
             });
             result = formattedText;
@@ -34,9 +35,27 @@ const withFormattedText = (title, text) => (Wrapped) => {
         result = text;
     };
 
+    const wrappedProps = {
+        title: title,
+        text: result,
+        idForKey: idForKey,
+    };
+
     return (
-        <Wrapped title={ title } text={ result } />
+        <Wrapped { ...wrappedProps } />
     );
+};
+
+withFormattedText.propTypes = {
+    title: PropTypes.string,
+    text: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.array,
+    ]),
+    idForKey: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
 };
 
 export default withFormattedText;

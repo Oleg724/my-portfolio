@@ -1,14 +1,14 @@
 import React, { Fragment } from 'react';
-import './work-details-card.css';
+import './work-details.css';
 
 import CloseButton from '../close-button';
 import WorkItem from '../work-item';
 
-const WorkDetailsCard = ({ image, details, onWindowClose }) => {
+const WorkDetails = ({ image, title, details, onWindowClose }) => {
 
     const workItemProps = {
         image: image, 
-        alt: details.title, 
+        alt: title, 
         text: details,
     };
 
@@ -22,4 +22,4 @@ const WorkDetailsCard = ({ image, details, onWindowClose }) => {
     );
 };    
 
-export default WorkDetailsCard;
+export default WorkDetails;

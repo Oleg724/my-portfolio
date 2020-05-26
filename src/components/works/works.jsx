@@ -6,7 +6,7 @@ import Image from '../image';
 import WorkInfo from '../work-info';
 import TooltipImageHover from '../tooltip-image-hover';
 import Record from '../record';
-import WorkDetailsCard from '../work-details-card';
+import WorkDetails from '../work-details';
 
 import { withFormattedText } from '../hocs';
 
@@ -43,6 +43,7 @@ const Works = ({
 
         const worksList = newWorks.slice(startIdx, endIdx).map( (work, number) => {
             const { id, image, details, ...workDataToShow } = work;
+            const { details: tooltipDetails } = tooltips;
     
             const imageWrapperProps = {
                 className: 'image-wrapper',
@@ -64,12 +65,17 @@ const Works = ({
                     {showTooltipImageHover && hoveredItemId === id 
                         && (
                             <div className="tooltip-image-hover-wrapper">
-                                <TooltipImageHover tooltip={ tooltips.details } />
+                                <TooltipImageHover tooltip={ tooltipDetails } />
                             </div>)}
                 </div>
             );
 
-            const rowRight = <WorkInfo workDataToShow={ workDataToShow } />;
+            const workInfoProps = {
+                id: id,
+                workDataToShow: workDataToShow,
+            };
+
+            const rowRight = <WorkInfo { ...workInfoProps } />;
 
             return (
                 <div className="row-wrapper" key={ id }>            
@@ -81,31 +87,50 @@ const Works = ({
 
         if (showModal && selectedWorkId) {
             const itemDetails = getWorksDetails();
-            const newItemDetails = [...itemDetails];
+            const newItemDetails = [ ...itemDetails ];
 
             const selectedWork = newItemDetails.find(work => work.id === selectedWorkId);
 
             const { image, id, ...otherDetails } = selectedWork;
 
-            const details = Object.entries(otherDetails).map(([title, text]) => { 
-                return withFormattedText(title, text)(Record);
+            const details = Object.entries(otherDetails).map(([title, text], idx) => {
+                const idForKey = title + id + idx; 
+                return (
+                    <div className="record-wrapper" key={ idForKey } >
+                        { withFormattedText(title, text, idForKey)(Record) }
+                    </div>
+                )
             });
 
-            const detailsCardProps = {
+            const { title } = otherDetails;
+
+            const workDetailsProps = {
                 onWindowClose: onWindowClose,
                 image: image,
                 details: details,
+                title: title,
             };
 
-            const detailsCard = <WorkDetailsCard { ...detailsCardProps } />;
+            const workDetails = <WorkDetails { ...workDetailsProps } />;
 
-            setWorksOnPage(detailsCard);                         
+            setWorksOnPage(workDetails);                         
         }
         else {
             setWorksOnPage(worksList);
         }
 
-    }, [showModal, subPage, selectedWorkId, getWorksDetails, getWorks, hoveredItemId, showTooltipImageHover]);
+    }, [
+        showModal, 
+        subPage, 
+        selectedWorkId, 
+        getWorksDetails, 
+        hoveredItemId, 
+        showTooltipImageHover,
+        itemsOnPage,
+        tooltips,
+        onWindowOpen, 
+        onWindowClose,
+    ]);
 
     return (
         <Fragment>

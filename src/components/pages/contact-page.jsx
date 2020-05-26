@@ -1,6 +1,8 @@
 import React from 'react';
 import './index.css';
 
+import PropTypes from 'prop-types';
+
 import { withDataService } from '../hocs';
 import Record from '../record';
 import MapImageSvg from '../map-image-svg';
@@ -23,7 +25,11 @@ const ContactPage = ({ getContacts, getCity, headlines, links }) => {
         
         const contactLink = <a href={ href } target="_blank" rel="noreferrer noopener">{ number }</a>
 
-        return <Record title={ contactType } text={ contactLink } />;
+        return (
+            <div className="contacts-wrapper" key={ contactType } >
+                <Record title={ contactType } text={ contactLink } idForKey={ contactType } />
+            </div>
+        );
     });
 
     return (       
@@ -35,6 +41,13 @@ const ContactPage = ({ getContacts, getCity, headlines, links }) => {
             <MapImageSvg city={ city } />
         </div>
     );
+};
+
+ContactPage.propTypes = {
+    getContacts: PropTypes.func.isRequired,
+    getCity: PropTypes.func.isRequired, 
+    headlines: PropTypes.string.isRequired,
+    links: PropTypes.object.isRequired, 
 };
 
 export default withDataService(ContactPage);

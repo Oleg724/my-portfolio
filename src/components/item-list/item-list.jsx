@@ -1,5 +1,8 @@
 import React from 'react';
 import './item-list.css';
+
+import PropTypes from 'prop-types';
+
 import Headline from '../headline';
 
 const ItemList = ({ skills, headlines }) => {
@@ -16,6 +19,11 @@ const ItemList = ({ skills, headlines }) => {
             </ul>
         </div>
     );
+};
+
+ItemList.propTypes = {
+    skills: PropTypes.array.isRequired,
+    headlines: PropTypes.string,
 };
 
 export default ItemList;

@@ -1,6 +1,8 @@
 import React from 'react';
 import './languages.css';
 
+import PropTypes from 'prop-types';
+
 const Languages = ({ languages, onLanguageChange }) => {
 
     const langList = Object.entries(languages).map( ([ key, lang ]) => {
@@ -22,6 +24,11 @@ const Languages = ({ languages, onLanguageChange }) => {
             { langList }
         </div>
     );
+};
+
+Languages.propTypes = {
+    languages: PropTypes.object.isRequired,
+    onLanguageChange: PropTypes.func.isRequired,
 };
 
 export default Languages;

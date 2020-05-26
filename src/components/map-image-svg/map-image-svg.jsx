@@ -1,6 +1,8 @@
 import React from 'react';
 import './map-image-svg.css';
 
+import PropTypes from 'prop-types';
+
 const MapImageSvg = ({ city }) => {
 
     return (
@@ -69,6 +71,10 @@ const MapImageSvg = ({ city }) => {
             </svg>
         </div>
     );
+};
+
+MapImageSvg.propTypes = {
+    city: PropTypes.string,
 };
 
 export default MapImageSvg;

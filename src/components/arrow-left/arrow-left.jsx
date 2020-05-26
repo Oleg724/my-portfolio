@@ -1,6 +1,8 @@
 import React from 'react';
 import './arrow-left.css';
 
+import PropTypes from 'prop-types';
+
 const ArrowLeft = ({ clazz }) => {
 
     return (
@@ -15,6 +17,10 @@ const ArrowLeft = ({ clazz }) => {
                 01-4.99 1.342z"/>
         </svg>
     );
+};
+
+ArrowLeft.propTypes = {
+    clazz: PropTypes.string,
 };
 
 export default ArrowLeft;

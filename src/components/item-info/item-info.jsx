@@ -1,5 +1,8 @@
 import React from 'react';
 import './item-info.css';
+
+import PropTypes from 'prop-types';
+
 import Tooltip from '../tooltip-message';
 import ArrowRight from '../arrow-right';
 import ArrowLeft from '../arrow-left';
@@ -52,6 +55,16 @@ const ItemInfo = ({
             </div>
         </div>
     );
+};
+
+ItemInfo.propTypes = {
+    textAbout: PropTypes.string,
+    tooltips: PropTypes.object,
+    headlines: PropTypes.string,
+    prevSubPage: PropTypes.func,
+    nextSubPage: PropTypes.func,
+    showArrowLeft: PropTypes.bool,
+    showArrowRight: PropTypes.bool,
 };
 
 export default ItemInfo;

@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+
+import PropTypes from 'prop-types';
+
 import { withArrowsFunctions } from '../hocs';
 import ArrowLeft from '../arrow-left';
 import ArrowRight from '../arrow-right';
@@ -88,5 +91,17 @@ const PortfolioPage = ({
 };
 
 const { getWorks } = new DataService();
+
+PortfolioPage.propTypes = {
+    getWorks: PropTypes.func.isRequired,
+    getWorksDetails: PropTypes.func.isRequired,
+    itemsOnPage: PropTypes.number.isRequired, 
+    subPage: PropTypes.number.isRequired, 
+    prevSubPage: PropTypes.func.isRequired, 
+    nextSubPage: PropTypes.func.isRequired, 
+    showArrowLeft: PropTypes.bool.isRequired, 
+    showArrowRight: PropTypes.bool.isRequired,
+    tooltips: PropTypes.object.isRequired,
+};
 
 export default withArrowsFunctions(getWorks)(PortfolioPage);

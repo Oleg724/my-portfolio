@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react';
 import './index.css';
 
+import PropTypes from 'prop-types';
+
 import { withArrowsFunctions } from '../hocs';
 import DataService from '../../data-service/data-service'
 import Row from '../row';
@@ -61,5 +63,18 @@ const AboutPage = ({
 };
 
 const { getAbout } = new DataService();
+
+AboutPage.propTypes = {
+    getAbout: PropTypes.func.isRequired,
+    getSkills: PropTypes.func.isRequired, 
+    headlines: PropTypes.object.isRequired,
+    tooltips: PropTypes.object.isRequired, 
+    subPage: PropTypes.number.isRequired, 
+    prevSubPage: PropTypes.func.isRequired, 
+    nextSubPage: PropTypes.func.isRequired, 
+    showArrowLeft: PropTypes.bool.isRequired, 
+    showArrowRight: PropTypes.bool.isRequired,
+    myPhoto: PropTypes.string.isRequired,
+};
 
 export default withArrowsFunctions(getAbout)(AboutPage);
