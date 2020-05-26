@@ -26,6 +26,7 @@ const WorkInfo = ({ id, workDataToShow }) => {
 };
 
 WorkInfo.propTypes = {
+    id: PropTypes.string.isRequired,
     workDataToShow: PropTypes.object.isRequired,
 };
 

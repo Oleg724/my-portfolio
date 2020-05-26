@@ -14,7 +14,7 @@ const Record = ({ title, text, idForKey }) => {
 
 Record.propTypes = {
     title: PropTypes.string.isRequired,
-    text: PropTypes.node,
+    text: PropTypes.node.isRequired,
     idForKey: PropTypes.oneOfType([
         PropTypes.number,
         PropTypes.string,

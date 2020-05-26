@@ -1,6 +1,8 @@
 import React from 'react';
 import './row.css';
 
+import PropTypes from 'prop-types';
+
 const Row = ({ left, right, clazzRow = '', clazzLeft = '', clazzRight = '' }) => {
 
     return (
@@ -14,6 +16,14 @@ const Row = ({ left, right, clazzRow = '', clazzLeft = '', clazzRight = '' }) =>
             </div>           
         </div>
     );
+};
+
+Row.propTypes = {
+    left: PropTypes.node.isRequired,
+    right: PropTypes.node.isRequired,
+    clazzRow: PropTypes.string,
+    clazzLeft: PropTypes.string,
+    clazzRight: PropTypes.string,
 };
 
 export default Row;

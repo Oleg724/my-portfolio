@@ -1,6 +1,8 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import './works.css';
 
+import PropTypes from 'prop-types';
+
 import Row from '../row';
 import Image from '../image';
 import WorkInfo from '../work-info';
@@ -137,6 +139,18 @@ const Works = ({
             { worksOnPage }
         </Fragment>
     );
+};
+
+Works.propTypes = {
+    selectedWorkId: PropTypes.string.isRequired,
+    showModal: PropTypes.bool.isRequired,
+    onWindowOpen: PropTypes.func.isRequired,
+    onWindowClose: PropTypes.func.isRequired,
+    getWorks: PropTypes.func.isRequired,
+    getWorksDetails: PropTypes.func.isRequired,
+    subPage: PropTypes.number.isRequired,
+    itemsOnPage: PropTypes.number.isRequired,
+    tooltips: PropTypes.object.isRequired,
 };
 
 export default Works;
