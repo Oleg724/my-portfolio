@@ -2,7 +2,17 @@
     position: absolute;
     animation: move-up 4s ease-in 1s forwards;
     top: 50%;
-    right: 5%;
-    width: 42px;
-    height: 42px;
+    right: 0%;
+    width: 39px;
+    height: 39px;
+}
+
+@keyframes move-up {
+    0% {
+        right: 0;
+    }
+    100% {
+        top: 10%;
+        right: 5%;
+    }
 }

@@ -1,6 +1,6 @@
 .headline {
-    color: #e31b6d;
     font-size: 18px;
+    color: #000000;
 }
 
 .headline:after {

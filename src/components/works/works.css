@@ -1,15 +1,11 @@
 .image-wrapper {
     position: relative;
-    width: 360px;
-    height: 270px;
-    border-radius: 50%;
-    box-shadow: 0 0 5px #ffffff, 0 0 10px #00e6c0, 0 0 15px #ffffff, 0 0 20px #ffffff, 0 0 35px #ffffff;
+    height: 341px;
     overflow: hidden;
     cursor: pointer;
     font-size: 24px;
     font-weight: 300;
     z-index: 2;
-    border-radius: 50%;
 }
 
 .image-wrapper:before,
@@ -31,11 +27,11 @@
 }
 
 .image-wrapper:before {
-    transform: translateX(-100%);
+    transform: translateX(-101%);
 }
 
 .image-wrapper:after {
-    transform: translateX(100%);
+    transform: translateX(101%);
 }
 
 .image-wrapper:hover:after {
@@ -48,13 +44,4 @@
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 3;
-}
-
-@keyframes move-up {
-    0% {
-        top: 50%;
-    }
-    100% {
-        top: 10%;
-    }
 }

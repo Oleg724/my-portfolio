@@ -3,25 +3,34 @@
     transition: all .8s;
 }
 
-.image:hover {
+.image--sm:hover {
     cursor: pointer;
 }
 
 .image--md {
-    width: 408px;
-    height: 300px;
-    border-radius: 50%;
-    background-color: #ffffff;
-    box-shadow: 
-        0 0 5px #ffffff, 
-        0 0 7px #00e6c0, 
-        0 0 12px #ffffff, 
-        0 0 15px #ffffff, 
-        0 0 20px #ffffff, 
-        0 0 35px #ffffff;
+    height: 18vw;
+    min-height: 338px;
+    border-radius: 5px;
 }
 
 .image--sm {
+    width: 100%;
     height: 100%;
     transition: all .8s;
+    transform: translateY(-103%);
+    animation: move-down 1.5s ease-out .5s forwards;
+}
+
+@keyframes move-down {
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .image--md {
+        min-height: initial;
+        height: 50px;
+        transform-origin: 100% 100%;
+    }
 }

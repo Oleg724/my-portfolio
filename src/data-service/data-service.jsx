@@ -15,7 +15,7 @@ export default class DataService extends Component {
                 age: 35
                 education: economist
                 place of residence: Chernivtsi
-                goal: Junior React Front-End Developer               
+                goal: work as a Junior React Front-End Developer               
                 main goal: to become an expert in Front-End development and Back-End development`,
 
                 `- html, scss/css,
@@ -23,8 +23,7 @@ export default class DataService extends Component {
                 - react, jquery,
                 - gulp, git,
                 - photoshop, figma          
-                languages: Ukrainian, Russian, English
-    
+                languages: Ukrainian, Russian, English  
                 practical application in the description of projects (section "portfolio")`,
 
                 `2001-2006: Faculty of Economics, specialty: international economics, ChNU.
@@ -52,7 +51,7 @@ export default class DataService extends Component {
                     title: 'go surf',
                     type: 'react website template',
                     image: surfPromo,
-                    description: 'the project is made independently based on React technology using classes',
+                    description: 'the project is made independently based on React',
                     usedTechnologies: ['react', 'jsx', 'html', 'css', 'javascript'],
                     link: 'https://go-surf-e2c98.web.app/',
                     github: 'https://github.com/Oleg724/go-surf',
@@ -70,7 +69,7 @@ export default class DataService extends Component {
                 {
                     id: '02',
                     title: 'cbd',
-                    type: 'site template',
+                    type: 'html site template',
                     image: cbdPromo,
                     description: `the project was done with the help of the gulp task manager`,
                     usedTechnologies: ['html', 'css', 'javascript', 'gulp'],
@@ -99,7 +98,7 @@ export default class DataService extends Component {
                 {   
                     id: '04',
                     title: 'monticello',
-                    type: 'html template',
+                    type: 'html site template',
                     image: monticelloPromo,
                     description: 'project made with prepros builder',
                     usedTechnologies: ['html', 'css/scss', 'prepros', 'js', 'jquery'],
@@ -116,7 +115,7 @@ export default class DataService extends Component {
                 {
                     id: '05',
                     title: 'travel more',
-                    type: 'html template',
+                    type: 'html site template',
                     image: bhromaonPromo,
                     description: `project made with prepros builder`,
                     usedTechnologies: ['html', 'css/scss', 'prepros'],
@@ -183,7 +182,6 @@ export default class DataService extends Component {
             'used technologies': item.usedTechnologies,
             'github': item.github,
             'link': item.link,  
-            'description': item.description,  
         }));
     };
 

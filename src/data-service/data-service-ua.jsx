@@ -15,7 +15,7 @@ export default class DataServiceUa extends Component {
                 вік: 35 років
                 освіта: економіст
                 місце проживання: м Чернівці
-                мета: Junior React Front-End розробник             
+                мета: робота Junior React Front-End розробником             
                 головна мета: стати експертом в області Front-End розробки і Back-End розробки`,
 
                 `- html, scss/css,
@@ -23,8 +23,7 @@ export default class DataServiceUa extends Component {
                 - react, jquery,
                 - gulp, git,
                 - photoshop, figma          
-                мови: українска, російська, англійська
-         
+                мови: українска, російська, англійська         
                 застосування на практиці в описі проектів (розділ "портфоліо")`,
 
                 `2001-2006: економічний факультет, спеціальність: міжнародна економіка, ЧНУ.
@@ -56,7 +55,7 @@ export default class DataServiceUa extends Component {
                     title: 'go surf',
                     type: 'react шаблон веб сайту',
                     image: surfPromo,
-                    description: 'проект зроблений за допомогою технології React з використаннім классів',
+                    description: 'проект зроблений за допомогою технології React',
                     usedTechnologies: ['react', 'jsx', 'html', 'css', 'js'],
                     link: 'https://go-surf-e2c98.web.app/',
                     github: 'https://github.com/Oleg724/go-surf',
@@ -65,14 +64,14 @@ export default class DataServiceUa extends Component {
                     react-scroll. Для анімації - react-animated-css і wowjs. При завантаженні програми визначається
                     місце розташування, відображаються назва населеного пункту і фактичні координати.
                     При виборі точки на карті світу автоматично змінюється обраний варіант на всіх сторінках (крім першої).
-                    Для даного типу макета інструмент React - не краще рішення`,
+                    Для даного типу макета інструмент React - не найкраще рішення`,
                     'browsers-tested': `Chrome, Opera, Firefox, Microsoft Edge`,
                     adaptivity: 'зроблена',  
                 },
                 {
                     id: '02',
                     title: 'cbd',
-                    type: 'шаблон сайту',
+                    type: 'html шаблон сайту',
                     image: cbdPromo,
                     description: `проект зроблений за допомогою такс-менеджеру gulp`,
                     usedTechnologies: ['html', 'css', 'js', 'gulp'],
@@ -100,7 +99,7 @@ export default class DataServiceUa extends Component {
                 {   
                     id: '04',
                     title: 'monticello',
-                    type: 'html шаблон',
+                    type: 'html шаблон сайту',
                     image: monticelloPromo,
                     description: 'проект зроблений за допомогою збирача prepros',
                     usedTechnologies: ['html', 'css/scss', 'prepros', 'js', 'jquery'],
@@ -118,7 +117,7 @@ export default class DataServiceUa extends Component {
                 {
                     id: '05',
                     title: 'travel more',
-                    type: 'html шаблон',
+                    type: 'html шаблон сайту',
                     image: bhromaonPromo,
                     description: `проект зроблений за допомогою збирача prepros`,
                     usedTechnologies: ['html', 'css/scss', 'prepros'],
@@ -185,7 +184,6 @@ export default class DataServiceUa extends Component {
             'використані технології': item.usedTechnologies,
             'github': item.github,
             'посилання': item.link,
-            'опис': item.description,  
         }));
     };
 

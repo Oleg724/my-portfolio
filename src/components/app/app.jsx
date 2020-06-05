@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import { DataServiceProvider } from '../data-service-context';
 
@@ -48,8 +48,8 @@ const english = {
   },
   languages: {
     eng: 'en', 
-    ukr: 'ua', 
-    rus: 'ru',
+    ukr: 'укр', 
+    rus: 'рус',
   },
   tooltips: {
     continue: 'click to continue',
@@ -91,13 +91,13 @@ const ukrainian = {
     mySkills: 'мої навички',
   },
   languages: {
-    eng: 'анг', 
+    eng: 'en', 
     ukr: 'укр', 
-    rus: 'рос',
+    rus: 'рус',
   },
   tooltips: {
-    continue: 'кликніть для продовження',
-    details: 'кликніть для деталізації'
+    continue: 'натисніть для продовження',
+    details: 'натисніть для деталізації'
   }
 };
 
@@ -135,7 +135,7 @@ const russian = {
     mySkills: 'мои навыки',
   },
   languages: {
-    eng: 'анг', 
+    eng: 'en', 
     ukr: 'укр', 
     rus: 'рус',
   },
@@ -148,7 +148,7 @@ const russian = {
 const App = () => {
 
   const [ language, setLanguage ] = useState({ language: english, service: new DataService() });
-  const [ itemsOnPage ] = useState(2);
+  const [ itemsOnPage, setItemsOnPage ] = useState('');
 
   const onLanguageChange = (key) => {
     switch (key) {
@@ -214,6 +214,20 @@ const App = () => {
   const languagesProps = {
     languages: languages,
     onLanguageChange: (lang) => onLanguageChange(lang),
+  };
+
+  useEffect(() => {
+    window.addEventListener('resize', onItemsOnPageChange);
+    onItemsOnPageChange();
+    return () => window.removeEventListener('resize', onItemsOnPageChange);
+  }, [document.documentElement.clientWidth, document.documentElement.clientHeight]);
+
+  const onItemsOnPageChange = () => {
+    const { clientWidth } = document.documentElement;
+    const { clientHeight } = document.documentElement;
+
+    const ratio = clientWidth/clientHeight;
+    ratio <= 1.25 ? setItemsOnPage(1) : setItemsOnPage(2);
   };
 
   return (

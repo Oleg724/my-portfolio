@@ -1,7 +1,10 @@
 .tooltip-image-hover {
     opacity: 0;
-    animation: tooltip-appearence .5s ease-out forwards;
+    animation: tooltip-appearence .5s ease forwards;
     text-align: center;
+    background-color: #292929;
+    padding: 8px 20px;
+    border-radius: 5px;
 }
 
 @keyframes tooltip-appearence {

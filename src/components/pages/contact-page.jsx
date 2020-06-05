@@ -35,8 +35,18 @@ const ContactPage = ({ getContacts, getCity, headlines, links }) => {
     return (       
         <div className="contact-page">
             <div className="contact-page__inner">
-                <Headline headlines={ headlines } />
-                { records }
+                <div className="contact-page__inner-inner">
+
+                    <div className="contact-page__list contact-page__list--front">
+                        <Headline headlines={ headlines } />
+                        { records }
+                    </div>
+                    <div className="contact-page__list contact-page__list--back">
+                        <Headline headlines={ headlines } />
+                        { records }
+                    </div>
+
+                </div>
             </div>
             <MapImageSvg city={ city } />
         </div>

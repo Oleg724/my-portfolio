@@ -64,7 +64,7 @@ const Works = ({
                 <div { ...imageWrapperProps } >
                     <Image { ...imageProps } />
 
-                    {showTooltipImageHover && hoveredItemId === id 
+                    {showTooltipImageHover && hoveredItemId === id
                         && (
                             <div className="tooltip-image-hover-wrapper">
                                 <TooltipImageHover tooltip={ tooltipDetails } />
@@ -77,7 +77,9 @@ const Works = ({
                 workDataToShow: workDataToShow,
             };
 
-            const rowRight = <WorkInfo { ...workInfoProps } />;
+            const rowRight = (
+                showTooltipImageHover && hoveredItemId === id
+                    && <WorkInfo { ...workInfoProps } />);
 
             return (
                 <div className="row-wrapper" key={ id }>            
@@ -108,6 +110,7 @@ const Works = ({
 
             const workDetailsProps = {
                 onWindowClose: onWindowClose,
+                onCloseTooltipImageHover: () => onCloseTooltipImageHover(),
                 image: image,
                 details: details,
                 title: title,

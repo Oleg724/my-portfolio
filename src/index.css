@@ -24,10 +24,21 @@
 body {
     font-family: 'Raleway', sans-serif;
     font-size: 50px;
-    font-weight: 200;
+    font-weight: 300;
     width: 100%;
     height: 100%;
-    background-color: #252934;
+    background: linear-gradient(90deg,#b9b7b3, #bfbeba);
+    color: #ffffff;
+}
+
+body:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(45deg, #8ad6db 20%, #7dc2c7 40%, #7ec8ce 60%);
+    opacity: .5;
 }
 
 button {

@@ -1,7 +1,7 @@
 .map {
-    width: 68%;
-    min-width: 570px;
+    width: 35vw;
     position: relative;
+    z-index: -1;
 }
 
 .map__image {
@@ -19,11 +19,12 @@
     content: '';
     display: block;
     border-radius: 50%;
-    width: 15px;
-    height: 15px;
-    box-shadow: 0 0 7px #00e6c0, 0 0 10px #00e6c0;
-    background-color: #00e6c0;
-    top: 49%;
+    max-width: 15px;
+    max-height: 15px;
+    width: 2vw;
+    height: 2vw;
+    background-color: #494c6a;
+    top: 43%;
     left: 20%;
     animation: appearence 3s ease-out;
     animation-delay: 10s;
@@ -31,7 +32,7 @@
 
 .map__text {
     display: inline-block;
-    top: 43%;
+    top: 33%;
     left: 15%;
     font-size: 17px;
     animation: appearence 3s ease-out 15s;
@@ -54,5 +55,70 @@
 @keyframes map-painting {
     100% {
         stroke-dashoffset: 0;
+    }
+}
+
+@media screen and (max-width: 660px) {
+    .map {
+        display: none;
+    }
+}
+
+/* 1.6 */
+@media screen and (max-aspect-ratio: 16/10) {
+    .map {
+        width: 38vw;
+    }
+
+    .map:before {
+        top: 43%;
+    }
+}
+
+/* 1.5 */
+@media screen and (max-aspect-ratio: 15/10) {
+    .map {
+        width: 43vw;
+    }
+}
+
+/* 1.333 */
+@media screen and (max-aspect-ratio: 4/3) {
+    .map {
+        width: 46vw;
+    }
+}
+
+/* 1.3 */
+@media screen and (max-aspect-ratio: 800/600) {
+    .map {
+        width: 46vw;
+    }
+}
+
+/* 1.25 */
+@media screen and (max-aspect-ratio: 5/4) {
+    .map {
+        width: 53vw;
+    }
+}
+
+/* 1.1 */
+@media screen and (max-aspect-ratio: 11/10) {
+    .map {
+        width: 59vw;
+    }
+}
+
+/* 1.0 */
+@media screen and (max-aspect-ratio: 1/1) {
+    .map {
+        display: none;
+    }
+}
+
+@media screen and (max-aspect-ratio: 3/4) {
+    .map {
+        display: none;
     }
 }

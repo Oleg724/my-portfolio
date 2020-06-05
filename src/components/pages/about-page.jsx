@@ -6,9 +6,13 @@ import PropTypes from 'prop-types';
 import { withArrowsFunctions } from '../hocs';
 import DataService from '../../data-service/data-service'
 import Row from '../row';
+import Grid from '../grid';
 import Image from '../image';
 import ItemInfo from '../item-info';
 import ItemList from '../item-list';
+
+import ArrowRight from '../arrow-right';
+import ArrowLeft from '../arrow-left';
 
 const AboutPage = ({ 
     getAbout, 
@@ -45,18 +49,18 @@ const AboutPage = ({
         alt: alt,
     };
 
-    const left = <Image { ...imageProps } />;
-    const right = <ItemInfo { ...itemInfoProps }/>;
-
     const { mySkills } = headlines;
+
+    const image = <Image { ...imageProps } />;
+    const info = <ItemInfo { ...itemInfoProps }/>;
+    const list = <ItemList skills={ skills } headlines={ mySkills } />;   
 
     return (
         <Fragment>
             <div className="about-page">
-                <Row left={ left } 
-                    right={ right } />
-                <ItemList skills={ skills }
-                    headlines={ mySkills } />
+                <Grid info={ info } 
+                    image={ image }
+                    list={ list } />
             </div>          
         </Fragment>
     );

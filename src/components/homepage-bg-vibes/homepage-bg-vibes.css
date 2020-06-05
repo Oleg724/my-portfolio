@@ -12,7 +12,7 @@
 .cls-12,
 .cls-13 {
     fill:none;
-    stroke:#ffffff;
+    stroke:#454e6f;
     stroke-linecap:round;
     stroke-linejoin:round;
 }
@@ -97,7 +97,7 @@
 }
 
 .cls-14 {
-    fill:#e31b6d;
+    fill: #e8ffff;
     opacity: 0;
     stroke-dasharray: 1233;
     stroke-dashoffset: 1233;

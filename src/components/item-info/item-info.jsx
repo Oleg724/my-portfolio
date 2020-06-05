@@ -3,7 +3,6 @@ import './item-info.css';
 
 import PropTypes from 'prop-types';
 
-import Tooltip from '../tooltip-message';
 import ArrowRight from '../arrow-right';
 import ArrowLeft from '../arrow-left';
 import Headline from '../headline';
@@ -27,17 +26,13 @@ const ItemInfo = ({
         onClick: () => nextSubPage(),
     };
 
-    const arrowLeft = showArrowLeft && (
-        <div { ...arrowLeftProps } >
-            <ArrowLeft />
-        </div>
-    );
+    const arrowLeft = showArrowLeft 
+        ? <div { ...arrowLeftProps }><ArrowLeft /></div>
+        : <div className="info__icon" ></div>;
 
-    const arrowRight = showArrowRight && (
-        <div { ...arrowRightProps } >
-            <ArrowRight />
-        </div> 
-    );
+    const arrowRight = showArrowRight
+        ? <div { ...arrowRightProps }><ArrowRight /></div>
+        : <div className="info__icon" ></div>;
 
     return (
         <div className="info">
@@ -47,10 +42,7 @@ const ItemInfo = ({
             <div className="info__inner">
                 <div className="info__arrows">
                     { arrowLeft }
-                    { arrowRight }
-                </div>
-                <div className="info__tooltip">
-                    <Tooltip text={ tooltips.continue } />
+                    { arrowRight }               
                 </div>
             </div>
         </div>

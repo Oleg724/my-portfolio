@@ -15,7 +15,7 @@ export default class DataServiceRu extends Component {
                 возраст: 35 лет
                 образование: экономист
                 место проживания: г. Черновцы
-                цель: Junior React Front-End разработчик              
+                цель: работа Junior React Front-End разработчиком              
                 главная цель: стать экспертом в области Front-End разработки и Back-End разработки`,
 
                 `- html, scss/css,
@@ -24,7 +24,6 @@ export default class DataServiceRu extends Component {
                 - gulp, git,
                 - photoshop, figma          
                 языки: украинский, русский, английский
-
                 применение на практике в описании проектов (раздел "портфолио")`,
 
                 `2001-2006: экономический факультет, специальность: международная экономика, ЧНУ.
@@ -54,7 +53,7 @@ export default class DataServiceRu extends Component {
                     title: 'go surf',
                     type: 'react шаблон веб сайта',
                     image: surfPromo,
-                    description: 'проект сделан с помощью технологии React с использованием классов',
+                    description: 'проект сделан с помощью технологии React',
                     usedTechnologies: ['react', 'jsx', 'html', 'css', 'javascript'],
                     link: 'https://go-surf-e2c98.web.app/',
                     github: 'https://github.com/Oleg724/go-surf',
@@ -71,7 +70,7 @@ export default class DataServiceRu extends Component {
                 {
                     id: '02',
                     title: 'cbd',
-                    type: 'шаблон сайта',
+                    type: 'html шаблон сайта',
                     image: cbdPromo,
                     description: `проект сделан при помощи таск-менеджера gulp`,
                     usedTechnologies: ['html', 'scss', 'javascript', 'jquery', 'gulp'],
@@ -99,7 +98,7 @@ export default class DataServiceRu extends Component {
                 {   
                     id: '04',
                     title: 'monticello',
-                    type: 'html шаблон',
+                    type: 'html шаблон сайта',
                     image: monticelloPromo,
                     description: 'проект сделан при помощи сборщика prepros',
                     usedTechnologies: ['html', 'css/scss', 'prepros', 'js', 'jquery'],
@@ -118,7 +117,7 @@ export default class DataServiceRu extends Component {
                 {
                     id: '05',
                     title: 'travel more',
-                    type: 'html шаблон',
+                    type: 'html шаблон сайта',
                     image: bhromaonPromo,
                     description: `проект сделан при помощи сборщика prepros`,
                     usedTechnologies: ['html', 'css/scss', 'prepros'],
@@ -185,7 +184,6 @@ export default class DataServiceRu extends Component {
             'использованные технологии': item.usedTechnologies,          
             'github': item.github,
             'ссылка': item.link,  
-            'описание': item.description,
         }));
     };
 

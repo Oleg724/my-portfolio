@@ -1,40 +1,165 @@
+.works-page {
+    height: 100vh;
+}
+
 .works-page,
-.about-page,
 .contact-page {
     max-width: 1080px;
     width: 90vw;
-    height: 100vh;
+}
+
+.contact-page,
+.about-page {
+    height: calc(100vh - 68px);
+    margin-top: 68px;
+}
+
+.about-page {
+    max-width: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
 }
 
 .works-page {
     padding-top: 137px;
 }
 
-.row-wrapper {
-    margin-bottom: 8%;
-}
-
 .row-wrapper:nth-child(2) {
     margin-bottom: 0;
 }
 
-.about-page,
 .contact-page {
     display: flex;
     align-items: center;
-}
-
-.about-page {
-    margin-top: 68px;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.contact-page {
-    flex-direction: row;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
+}
+
+.about-page:before,
+.works-page:before,
+.contact-page:before,
+.about-page:after,
+.works-page:after,
+.contact-page:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    background-size: cover;    
+    opacity: .9;
+}
+
+.about-page:before,
+.works-page:before,
+.contact-page:before {
+    z-index: -2;
+}
+
+.about-page:after,
+.works-page:after,
+.contact-page:after {
+    z-index: -1;
+    background: linear-gradient(45deg, #8ad6db 20%, #7dc2c7 40%, #7ec8ce 60%);
+    opacity: .5;
+}
+
+.about-page:before {
+    min-height: 100%;
+}
+
+.works-page:before {
+    height: 100vh;  
+    background: url(../../assets/images/portfolio-bg/empty-gallery1920x1200-1.6.jpg) no-repeat;
+    background-size: cover;
+}
+
+.about-page:before {
+    background-image: url(../../assets/images/black-iphone-7-on-white-table.jpg);
+}
+
+.contact-page:before {
+    height: 100vh;  
+    background: url(../../assets/images/contacts-bg/contacts1920x1200-1.6.jpg) no-repeat;
+    background-size: cover;
+}
+
+.contact-page a {
+    font-family: 'Play', sans-serif;
+}
+
+.contact-page > div:last-child {
+    position: absolute;
+    top: 13vw;
+    left: 40vw;
+}
+
+.contact-page__inner {
+    width: 387px;
+    height: 306px;
+    position: absolute;
+    top: 30%;
+    left: 5vw;
+}
+
+.contact-page__inner-inner {
+    width: 100%;
+    height: 100%;
     position: relative;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50%;
+    animation: slow-moving 12s linear infinite;
+}
+
+.contact-page__list {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backface-visibility: hidden;
+    overflow-y: auto;
+}
+
+.contact-page__list::-webkit-scrollbar {
+    width: 10px;
+    background-color: rgba(23, 22, 22, .22);
+    box-shadow: inset 0 0 6px #333333;
+}
+
+.contact-page__list::-webkit-scrollbar-thumb {
+    background-color: #252525;
+}
+
+.contact-page__list--front,
+.contact-page__list--back {   
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.contact-page__list--front {
+    z-index: 2;  
+}
+
+.contact-page__list--back {
+    transform: rotateY(180deg);
+}
+
+@keyframes slow-moving {
+    0% {
+        transform: translate(-10%) perspective(500px) rotateY(-15deg);
+    }
+    87% {
+        transform: translate(10%) perspective(500px) rotateY(15deg);
+    }
+    100% {
+        transform: translate(-10%) perspective(500px) rotateY(165deg);
+    }
 }
 
 .number-wrapper,
@@ -43,8 +168,8 @@
 }
 
 .works-page__inner {
-    width: 42px;
-    height: 42px;
+    width: 39px;
+    height: 39px;
     top: 50%;
 }
 
@@ -57,11 +182,11 @@
 }
 
 .works-page__inner-position-left {
-    left: 3%;
+    left: 0;
 }
 
 .works-page__inner-position-right {
-    right: 5%;
+    right: 0;
 }
 
 .number-wrapper {
@@ -73,7 +198,7 @@
     display: none;
 }
 
-.display-none-tiomeout {
+.display-none-timeout {
     display: block;
     animation: display-none 1s linear forwards;
 }
@@ -99,7 +224,182 @@
 .home-page__inner--position-absolute {
     position: absolute;
     width: 100%;
-    bottom: -11%;
+    max-width: 1200px;
+    height: 41vh;
+    bottom: 0%;
     left: -13%;
     z-index: -1;
 }
+
+@media screen and (max-width: 1200px) {
+    .home-page__inner--position-absolute {
+        height: 31vw;
+    }
+}
+
+/* @media screen and (max-width: 1160px) {
+    .contact-page__inner {
+        /* left: initial; */
+        /* top: initial;
+        bottom: 5vw;
+    }
+} */
+
+/* 1.6 */
+@media screen and (max-aspect-ratio: 16/10) {
+    .contact-page:before {
+        background: url(../../assets/images/contacts-bg/contacts1920x1280-1.5.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contact-page > div:last-child {
+        position: absolute;
+        top: 14vw;
+        left: 42vw;
+    }
+
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1280-1.5.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 1.5 */
+@media screen and (max-aspect-ratio: 15/10) {
+    .contact-page:before {
+        background: url(../../assets/images/contacts-bg/contacts1920x1440-4on3.jpg) no-repeat;
+        background-size: cover;
+    }
+    
+    .contact-page > div:last-child {
+        position: absolute;
+        top: 16vw;
+        left: 35vw;
+    }
+
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1439-4on3.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 1.333 */
+@media screen and (max-aspect-ratio: 4/3) {
+    .contact-page:before {
+        background: url(../../assets/images/contacts-bg/contacts1920x1477-1.3.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contact-page > div:last-child {
+        position: absolute;
+        top: 17vw;
+        left: 30vw;
+    }
+
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1477-1.3.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 1.3 */
+@media screen and (max-aspect-ratio: 800/600) {
+    .contact-page:before {
+        background: url(../../assets/images/contacts-bg/contacts1920x1537-1.25.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contact-page > div:last-child {
+        position: absolute;
+        top: 17vw;
+        left: 30vw;
+    }
+
+    .contact-page__inner {
+        top: 50%;
+        left: 50%;
+        right: 5vw;
+    }
+
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1537-1.25.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 1.25 */
+@media screen and (max-aspect-ratio: 5/4) {
+    .contact-page:before {
+        background: url(../../assets/images/contacts-bg/contacts1920x1746-1.1.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contact-page > div:last-child {
+        position: absolute;
+        top: 19vw;
+        left: 34vw;
+    }
+
+    .contact-page__inner {
+        top: 42%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: initial;
+        right: initial;
+    }
+
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1747-1.1.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 1.1 */
+@media screen and (max-aspect-ratio: 11/10) {
+    .contact-page:before {
+        background: url(../../assets/images/contacts-bg/contacts1920x1746-1on1.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contact-page > div:last-child {
+        position: absolute;
+        top: 20vw;
+        left: 25vw;
+    }
+}
+
+/* 1.0 */
+@media screen and (max-aspect-ratio: 1/1) {
+    .contact-page:before {
+        background: url(../../assets/images/contacts-bg/contacts1920x1440-3on4.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .contact-page > div:last-child {
+        position: absolute;
+        top: 19vw;
+        left: 6vw;
+    }
+}
+
+@media screen and (max-aspect-ratio: 3/4) {
+    .contact-page__inner {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        bottom: initial;
+        right: initial;
+    }
+}
+
+@media screen and (max-width: 630px) { 
+    .home-page .hero {
+        margin-left: 30px;
+    }
+}
+
+/* @media screen and (max-width: 800px) {
+    .contact-page > div:last-child {
+        margin: 0 auto;
+    }
+} */

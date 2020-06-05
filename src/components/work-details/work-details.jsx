@@ -6,7 +6,13 @@ import PropTypes from 'prop-types';
 import CloseButton from '../close-button';
 import WorkItem from '../work-item';
 
-const WorkDetails = ({ image, title, details, onWindowClose }) => {
+const WorkDetails = ({ 
+    image, 
+    title, 
+    details, 
+    onWindowClose,
+    onCloseTooltipImageHover, 
+}) => {
 
     const workItemProps = {
         image: image, 
@@ -14,10 +20,19 @@ const WorkDetails = ({ image, title, details, onWindowClose }) => {
         text: details,
     };
 
+    const onWindowAndTooltipClose = () => {
+        onWindowClose();
+        onCloseTooltipImageHover();
+    }
+
+    const closeButtonProps = {
+        onWindowAndTooltipClose: onWindowAndTooltipClose,
+    };
+
     return (
         <Fragment>
             <div className="close-button-wrapper">
-                <CloseButton onWindowClose={ onWindowClose } />
+                <CloseButton { ...closeButtonProps } />
             </div>           
             <WorkItem { ...workItemProps } />
         </Fragment>
@@ -29,6 +44,7 @@ WorkDetails.propTypes = {
     title: PropTypes.string.isRequired,
     details: PropTypes.array.isRequired,
     onWindowClose: PropTypes.func.isRequired,
+    onCloseTooltipImageHover: PropTypes.func.isRequired,
 };  
 
 export default WorkDetails;
