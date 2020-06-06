@@ -1,18 +1,15 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useState } from 'react';
 import './index.css';
 
 import PropTypes from 'prop-types';
-
 import { withArrowsFunctions } from '../hocs';
 import DataService from '../../data-service/data-service'
-import Row from '../row';
 import Grid from '../grid';
 import Image from '../image';
 import ItemInfo from '../item-info';
 import ItemList from '../item-list';
-
-import ArrowRight from '../arrow-right';
-import ArrowLeft from '../arrow-left';
+import ModalWindow from '../modal-window';
+import ModalItem from '../modal-item';
 
 const AboutPage = ({ 
     getAbout, 
@@ -25,6 +22,12 @@ const AboutPage = ({
     showArrowLeft, 
     showArrowRight,
     myPhoto }) => {
+
+    const [showModal, setShowModal] = useState(false);
+
+    const onShowCloseModal = () => {
+        setShowModal((prevState) => !prevState);
+    };
 
     const about = getAbout();
     const skills = getSkills();
@@ -55,13 +58,35 @@ const AboutPage = ({
     const info = <ItemInfo { ...itemInfoProps }/>;
     const list = <ItemList skills={ skills } headlines={ mySkills } />;   
 
+    const gridProps = {
+        info: info, 
+        image: image,
+        list: list,
+        onShowCloseModal: onShowCloseModal,
+    };
+
+    const modalWindowProps = {
+        openCloseFunction: onShowCloseModal
+    };
+
+    const modalItemImageProps = {
+        image: myPhoto,
+        alt: alt,
+        clazz: 'modal-item__image--lg',
+    };
+
+    const modalWindow = showModal && (
+        <ModalWindow { ...modalWindowProps } >
+            <ModalItem { ...modalItemImageProps } />
+        </ModalWindow>
+    );
+
     return (
         <Fragment>
             <div className="about-page">
-                <Grid info={ info } 
-                    image={ image }
-                    list={ list } />
-            </div>          
+                <Grid { ...gridProps } />  
+                { modalWindow }            
+            </div>                  
         </Fragment>
     );
 };

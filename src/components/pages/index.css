@@ -23,7 +23,9 @@
 }
 
 .works-page {
-    padding-top: 137px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .row-wrapper:nth-child(2) {
@@ -48,6 +50,7 @@
     top: 0;
     left: 0;
     min-width: 100%;
+    min-height: 100%;
     background-size: cover;    
     opacity: .9;
 }
@@ -94,6 +97,7 @@
     position: absolute;
     top: 13vw;
     left: 40vw;
+    z-index: 0;
 }
 
 .contact-page__inner {
@@ -236,14 +240,6 @@
         height: 31vw;
     }
 }
-
-/* @media screen and (max-width: 1160px) {
-    .contact-page__inner {
-        /* left: initial; */
-        /* top: initial;
-        bottom: 5vw;
-    }
-} */
 
 /* 1.6 */
 @media screen and (max-aspect-ratio: 16/10) {
@@ -397,9 +393,3 @@
         margin-left: 30px;
     }
 }
-
-/* @media screen and (max-width: 800px) {
-    .contact-page > div:last-child {
-        margin: 0 auto;
-    }
-} */

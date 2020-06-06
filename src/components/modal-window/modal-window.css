@@ -5,6 +5,7 @@
     right: 0%;
     width: 39px;
     height: 39px;
+    z-index: 2;
 }
 
 @keyframes move-up {
@@ -12,7 +13,7 @@
         right: 0;
     }
     100% {
-        top: 10%;
+        top: 7%;
         right: 5%;
     }
 }

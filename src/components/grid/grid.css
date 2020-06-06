@@ -1,5 +1,4 @@
 .tab {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -22,27 +21,33 @@
 @media screen and (max-width: 980px) {
     .tab {
         justify-content: center;
+        align-items: center;
         height: initial;
     }
 
     .tab__item:first-child {
-        width: 90vw;
+        width: 75vw;
         height: 52vh;
-        min-height: 400px;
     }
 
     .tab__item:nth-child(2) {
         position: absolute;
-        bottom: 10px;
-        right: 10px;
-        cursor: pointer;  
-    }
-
-    .tab__item:nth-child(2):hover > img {
-        transform: scale(4);
+        top: 17px;
+        left: 96px;
+        cursor: pointer;
+        z-index: 2;  
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
     }
 
     .tab__item:last-child {
-        display: none;
+        margin: 0 auto;
+    }
+
+    .tab__item:last-child,
+    .tab__item:first-child {
+        width: 75vw;
     }
 }

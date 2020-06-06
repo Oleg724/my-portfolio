@@ -220,7 +220,7 @@ const App = () => {
     window.addEventListener('resize', onItemsOnPageChange);
     onItemsOnPageChange();
     return () => window.removeEventListener('resize', onItemsOnPageChange);
-  }, [document.documentElement.clientWidth, document.documentElement.clientHeight]);
+  }, []);
 
   const onItemsOnPageChange = () => {
     const { clientWidth } = document.documentElement;

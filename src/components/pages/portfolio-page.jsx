@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import PropTypes from 'prop-types';
-
 import { withArrowsFunctions } from '../hocs';
 import ArrowLeft from '../arrow-left';
 import ArrowRight from '../arrow-right';

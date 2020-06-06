@@ -3,10 +3,10 @@ import './close-button.css';
 
 import PropTypes from 'prop-types';
 
-const CloseButton = ({ onWindowAndTooltipClose }) => {
+const CloseButton = ({ closeFunction }) => {
 
     return (
-        <div className="close-button" onClick={ () => onWindowAndTooltipClose() } >
+        <div className="close-button" onClick={ () => closeFunction() } >
             <button className="close-button__button" 
                 type="button"></button>
         </div>
@@ -14,7 +14,7 @@ const CloseButton = ({ onWindowAndTooltipClose }) => {
 };
 
 CloseButton.propTypes = {
-    onWindowAndTooltipClose: PropTypes.func.isRequired,
+    closeFunction: PropTypes.func.isRequired,
 };
 
 export default CloseButton;

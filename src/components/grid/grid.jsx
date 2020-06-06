@@ -3,7 +3,7 @@ import './grid.css';
 
 import PropTypes from 'prop-types';
 
-const Grid = ({ info, image, list }) => {
+const Grid = ({ info, image, list, onShowCloseModal = '' }) => {
 
     return (
         <div className='tab'>   
@@ -11,7 +11,7 @@ const Grid = ({ info, image, list }) => {
                 { info }
             </div>
 
-            <div className='tab__item'>
+            <div className='tab__item' onClick={ onShowCloseModal } >
                 { image }
             </div> 
 
@@ -22,12 +22,11 @@ const Grid = ({ info, image, list }) => {
     );
 };
 
-// Grid.propTypes = {
-//     left: PropTypes.node.isRequired,
-//     right: PropTypes.node.isRequired,
-//     clazzRow: PropTypes.string,
-//     clazzLeft: PropTypes.string,
-//     clazzRight: PropTypes.string,
-// };
+Grid.propTypes = {
+    info: PropTypes.node,
+    image: PropTypes.node,
+    list: PropTypes.node,
+    onShowCloseModal: PropTypes.func,
+};
 
 export default Grid;

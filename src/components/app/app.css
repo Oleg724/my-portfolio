@@ -8,6 +8,16 @@
     flex-wrap: wrap;
 }
 
+/* .app:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+    background: linear-gradient(45deg, #8ad6db 20%, #7dc2c7 40%, #7ec8ce 60%);
+    opacity: .5;
+} */
+
 .header-wrapper,
 .languages-wrapper {
     position: absolute;
@@ -36,7 +46,7 @@
 .fade-enter-active {
     z-index: -2;
     opacity: 1;
-    transition: opacity .8s ease-out;
+    transition: opacity .8s ease-out, z-index .8s ease-out ;
 }
 
 .fade-enter-active .works-page:before {

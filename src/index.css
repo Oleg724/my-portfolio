@@ -29,6 +29,8 @@ body {
     height: 100%;
     background: linear-gradient(90deg,#b9b7b3, #bfbeba);
     color: #ffffff;
+    position: relative;
+    z-index: -3;
 }
 
 body:before {
@@ -36,7 +38,7 @@ body:before {
     width: 100%;
     height: 100%;
     position: absolute;
-    z-index: -1;
+    z-index: -3;
     background: linear-gradient(45deg, #8ad6db 20%, #7dc2c7 40%, #7ec8ce 60%);
     opacity: .5;
 }

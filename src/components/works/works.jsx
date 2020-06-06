@@ -2,15 +2,13 @@ import React, { Fragment, useState, useEffect } from 'react';
 import './works.css';
 
 import PropTypes from 'prop-types';
-
 import Row from '../row';
 import Image from '../image';
 import WorkInfo from '../work-info';
 import TooltipImageHover from '../tooltip-image-hover';
-import Record from '../record';
-import WorkDetails from '../work-details';
-
-import { withFormattedText } from '../hocs';
+import ModalWindow from '../modal-window';
+import WorkItemDetails from '../works-item-details';
+import ModalItem from '../modal-item';
 
 const Works = ({ 
     selectedWorkId, 
@@ -37,6 +35,11 @@ const Works = ({
 
     const onCloseTooltipImageHover = () => {
         setShowTooltipImageHover(false);
+    };
+
+    const onWindowAndTooltipClose = () => {
+        onWindowClose();
+        onCloseTooltipImageHover();
     };
         
     useEffect(() => { 
@@ -90,6 +93,9 @@ const Works = ({
         });
 
         if (showModal && selectedWorkId) {
+
+            const details = <WorkItemDetails getWorksDetails={ getWorksDetails } selectedWorkId={ selectedWorkId } />;    
+
             const itemDetails = getWorksDetails();
             const newItemDetails = [ ...itemDetails ];
 
@@ -97,28 +103,22 @@ const Works = ({
 
             const { image, id, ...otherDetails } = selectedWork;
 
-            const details = Object.entries(otherDetails).map(([title, text], idx) => {
-                const idForKey = title + id + idx; 
-                return (
-                    <div className="record-wrapper" key={ idForKey } >
-                        { withFormattedText(title, text, idForKey)(Record) }
-                    </div>
-                )
-            });
-
             const { title } = otherDetails;
 
-            const workDetailsProps = {
-                onWindowClose: onWindowClose,
-                onCloseTooltipImageHover: () => onCloseTooltipImageHover(),
-                image: image,
-                details: details,
-                title: title,
+            const workItemProps = {
+                image: image, 
+                alt: title,
+                clazz: 'modal-item__image', 
+                text: details,
             };
 
-            const workDetails = <WorkDetails { ...workDetailsProps } />;
+            const modalWindow = (
+                <ModalWindow openCloseFunction={ onWindowAndTooltipClose } >
+                    <ModalItem { ...workItemProps } />
+                </ModalWindow>
+            );
 
-            setWorksOnPage(workDetails);                         
+            setWorksOnPage(modalWindow);                         
         }
         else {
             setWorksOnPage(worksList);
