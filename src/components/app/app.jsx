@@ -227,7 +227,7 @@ const App = () => {
     const { clientHeight } = document.documentElement;
 
     const ratio = clientWidth/clientHeight;
-    ratio <= 1.25 ? setItemsOnPage(1) : setItemsOnPage(2);
+    ratio <= (800 / 600) ? setItemsOnPage(1) : setItemsOnPage(2);
   };
 
   return (

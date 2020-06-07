@@ -22,8 +22,8 @@ const Works = ({
     tooltips }) => {
 
     const [worksOnPage, setWorksOnPage] = useState([]);
-    const [showTooltipImageHover, setShowTooltipImageHover] = useState(false);
-    const [hoveredItemId, setHoveredItemId] = useState('');
+    const [showTooltipImageHover, setShowTooltipImageHover] = useState(true);
+    const [hoveredItemId, setHoveredItemId] = useState('01');
 
     const works = getWorks();
     const newWorks = [...works];

@@ -33,21 +33,132 @@
     height: auto;
 }
 
-/* 1.6 */
+/* > 2.33 */
 
-@media screen and (max-aspect-ratio: 16/10) {
+@media screen and (min-aspect-ratio: 217/100) {
     .row-wrapper:first-child > .row .col-md-6:first-child {
-        top: 22.3vw;
+        top: 9.5vw;
+        left: 11.5vw;
+        transform: perspective(37vw) rotateY(22.9deg);    
+    }
+    
+    .row-wrapper:nth-child(2) > .row .col-md-6:first-child {
+        top: 10vw;
+        left: 56.5vw;
+        transform: perspective(80vw) rotateY(-52.1deg);
+    }
+    
+    .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
+        width: 32.6vw;
+    }
+    
+    .row-wrapper:nth-child(2) > .row .col-md-6:first-child .image-wrapper {
+        width: 31.2vw;
+    }
+
+    .row-wrapper > .row .col-md-6:nth-child(2) {
+        bottom: 5vh;
+        left: 35vw;
+    }
+}
+
+/* 2.33 */
+
+@media screen and (max-aspect-ratio: 21/9) {
+    .row-wrapper:first-child > .row .col-md-6:first-child {
+        top: 9.3vw;
         left: 11.5vw;
     }
     
     .row-wrapper:nth-child(2) > .row .col-md-6:first-child {
-        top: 23.6vw;
-        left: 57%;
+        top: 10vw;
+        left: 56.5vw;
+        transform: perspective(80vw) rotateY(-52.1deg);
+    }
+    
+    .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
+        width: 32.6vw;
     }
     
     .row-wrapper:nth-child(2) > .row .col-md-6:first-child .image-wrapper {
-        width: 72%;
+        width: 31.2vw;
+    }
+
+    .row-wrapper > .row .col-md-6:nth-child(2) {
+        left: 35vw;
+        bottom: 16vh;
+    }
+}
+
+/* 1.9 */
+
+@media screen and (max-aspect-ratio: 19/10) {
+    .row-wrapper:first-child > .row .col-md-6:first-child {
+        top: 12.3vw;
+        left: 11.5vw;
+    }
+    
+    .row-wrapper:nth-child(2) > .row .col-md-6:first-child {
+        top: 13vw;
+        left: 56.5vw;
+        transform: perspective(80vw) rotateY(-52.1deg);
+    }
+    
+    .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
+        width: 32.6vw;
+    }
+    
+    .row-wrapper:nth-child(2) > .row .col-md-6:first-child .image-wrapper {
+        width: 31.2vw;
+    }
+}
+
+/* 1.77 */
+
+@media screen and (max-aspect-ratio: 16/9) {
+    .row-wrapper:first-child > .row .col-md-6:first-child {
+        top: 19vw;
+        left: 11.5vw;
+    }
+    
+    .row-wrapper:nth-child(2) > .row .col-md-6:first-child {
+        top: 19.6vw;
+        left: 56.4vw;
+    }
+    
+    .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
+        width: 32.5vw;
+    }
+    
+    .row-wrapper:nth-child(2) > .row .col-md-6:first-child .image-wrapper {
+        width: 31vw;
+    }
+
+    .row-wrapper > .row .col-md-6:nth-child(2) {
+        left: 35vw;
+        bottom: 8vh;
+    }
+}
+
+/* 1.6 */
+
+@media screen and (max-aspect-ratio: 16/10) {
+    .row-wrapper:first-child > .row .col-md-6:first-child {
+        left: 11.7vw;
+        top: 22.5vw;
+    }
+    
+    .row-wrapper:nth-child(2) > .row .col-md-6:first-child {
+        top: 22.9vw;
+        left: 56.4vw;
+    }
+    
+    .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
+        width: 32.3vw;
+    }
+    
+    .row-wrapper:nth-child(2) > .row .col-md-6:first-child .image-wrapper {
+        width: 31.9vw;
     }
 }
 
@@ -55,68 +166,41 @@
 
 @media screen and (max-aspect-ratio: 15/10) {
     .row-wrapper:first-child > .row .col-md-6:first-child {
-        left: 7.7vw;
-        top: 24.7vw;
+        left: 5.9vw;
+        top: 23.7vw;
+        transform: perspective(48vw) rotateY(22.9deg);
     }
     
     .row-wrapper:nth-child(2) > .row .col-md-6:first-child {
-        top: 26.7vw;
-        left: 58.5vw;
+        top: 25.7vw;
+        left: 59.5vw;
+        transform: perspective(85vw) rotateY(-52.1deg);
     }
     
     .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
-        width: 38.3vw;
+        width: 37vw;
     }
     
     .row-wrapper:nth-child(2) > .row .col-md-6:first-child .image-wrapper {
-        width: 82%;
+        width: 34vw;
     }
 }
 
-/* 1.333 */
-
-@media screen and (max-aspect-ratio: 4/3) {
-    .row-wrapper:first-child > .row .col-md-6:first-child {
-        top: 25.6vw;
-        left: 6.6vw;
-    }
-    
-    .row-wrapper:nth-child(2) > .row .col-md-6:first-child {
-        top: 20vw;
-        left: 56.5%;
-        transform: perspective(80vw) rotateY(-52.1deg);
-    }
-    
-    .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
-        width: 42.3%;
-    }
-    
-    .row-wrapper:nth-child(2) > .row .col-md-6:first-child .image-wrapper {
-        width: 72%;
-    }
-}
-
-/* 1.3 */
+/* 1.33 */
 
 @media screen and (max-aspect-ratio: 800/600) {
     .row-wrapper:first-child > .row .col-md-6:first-child {
-        top: 26.4vw;
-        left: 4.1vw;
-        transform: perspective(39vw) rotateY(22.9deg);
+        top: 12.4vw;
+        left: 21.1vw;
+        transform: perspective(73vw) rotateY(22.9deg);
     }
-    
+
     .row-wrapper:nth-child(2) > .row .col-md-6:first-child {
-        top: 28vw;
-        left: 58%;
-        transform: perspective(80vw) rotateY(-48.1deg);
+        display: none;
     }
     
     .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
-        width: 42.7%;
-    }
-    
-    .row-wrapper:nth-child(2) > .row .col-md-6:first-child .image-wrapper {
-        width: 82%;
+        width: 57.7vw;
     }
 }
 
@@ -124,8 +208,8 @@
 
 @media screen and (max-aspect-ratio: 5/4) {
     .row-wrapper:first-child > .row .col-md-6:first-child {
-        top: 23vw;
-        left: 7.5vw;
+        top: 14vw;
+        left: 9vw;
         transform: perspective(45vw) rotateY(13.9deg);
     }
     
@@ -139,11 +223,13 @@
     }
     
     .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
-        width: 66.7vw;
+        width: 65vw;
     }
-    
-    .row-wrapper:nth-child(2) > .row .col-md-6:first-child .image-wrapper {
-        width: 82%;
+
+    .row-wrapper > .row .col-md-6:nth-child(2) {
+        bottom: initial;
+        top: 60vw;
+        left: 37vw;
     }
 }
 
@@ -151,17 +237,94 @@
 
 @media screen and (max-aspect-ratio: 11/10) {
     .row-wrapper:first-child > .row .col-md-6:first-child {
-        top: 25vh;
-        left: 8vh;
-        transform: perspective(51vh) rotateY(13.9deg);
-    }
-    
-    .row-wrapper > .row .col-md-6:nth-child(2) {
-        top: 75%;
-        left: 10%;
+        top: 15.8vw;
+        left: 9.6vw;
+        transform: perspective(51vw) rotateY(13.9deg);
     }
     
     .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
-        width: 72.5vh;
+        width: 71.5vw;
+    }
+
+    .row-wrapper > .row .col-md-6:nth-child(2) {
+        bottom: initial;
+        top: 69vw;
+        left: 28vw;
+    }
+}
+
+/* 1.0 */
+@media screen and (max-aspect-ratio: 1/1) {
+    .row-wrapper:first-child > .row .col-md-6:first-child {
+        top: 25vw;
+        left: 20.4vw;
+        transform: perspective(51vw) rotateY(13.9deg)
+    }
+    
+    .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
+        width: 79vw;
+    }
+
+    .row-wrapper > .row .col-md-6:nth-child(2) {
+        bottom: initial;
+        top: 80vw;
+        left: 16vw;
+    }
+}
+
+/* 0.75 */
+
+@media screen and (max-aspect-ratio: 3/4) {
+    .row-wrapper:first-child > .row .col-md-6:first-child {
+        top: 20vw;
+        left: 17.3vw;
+        transform: perspective(68vw) rotateY(13.9deg);
+    }
+    
+    .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
+        width: 95vw;
+    }
+
+    .row-wrapper > .row .col-md-6:nth-child(2) {
+        bottom: initial;
+        top: 94vw;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 85%;
+    }
+}
+
+/* 0.66 */
+
+@media screen and (max-aspect-ratio: 2/3) {
+    .row-wrapper:first-child > .row .col-md-6:first-child {
+        top: 31vw;
+        left: 5.8vw;
+        transform: perspective(73vw) rotateY(11.9deg);  
+    }
+    
+    .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
+        width: 118vw;
+    }
+
+    .row-wrapper > .row .col-md-6:nth-child(2) {
+        top: 113vw;
+        left: 7vw;
+        transform: initial;
+        width: 80%;
+    }
+}
+
+/* 0.5 */
+
+@media screen and (max-aspect-ratio: 1/2) {
+    .row-wrapper:first-child > .row .col-md-6:first-child {
+        top: 33vw;
+        left: 5.8vw;
+        transform: perspective(83vw) rotateY(13.9deg);
+    }
+    
+    .row-wrapper:first-child > .row .col-md-6:first-child .image-wrapper {
+        width: 123vw;
     }
 }

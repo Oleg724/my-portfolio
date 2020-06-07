@@ -186,11 +186,11 @@
 }
 
 .works-page__inner-position-left {
-    left: 0;
+    left: 5%;
 }
 
 .works-page__inner-position-right {
-    right: 0;
+    right: 5%;
 }
 
 .number-wrapper {
@@ -241,6 +241,60 @@
     }
 }
 
+/* > 2.33 */
+
+@media screen and (min-aspect-ratio: 217/100) {
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery2560x1080-2.33.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 2.33 */
+
+@media screen and (max-aspect-ratio: 21/9) {
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery2560x1179-2.15.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 2.15 */
+
+@media screen and (max-aspect-ratio: 215/100) {
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery2560x1282-2.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 2 */
+
+@media screen and (max-aspect-ratio: 2/1) {
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery2560x1343-1.9.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 1.9 */
+
+@media screen and (max-aspect-ratio: 19/10) {
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1080-1.77.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
+/* 1.77 */
+
+@media screen and (max-aspect-ratio: 16/9) {
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1200-1.6.jpg) no-repeat;
+        background-size: cover;
+    }
+}
+
 /* 1.6 */
 @media screen and (max-aspect-ratio: 16/10) {
     .contact-page:before {
@@ -258,6 +312,14 @@
         background: url(../../assets/images/portfolio-bg/empty-gallery1920x1280-1.5.jpg) no-repeat;
         background-size: cover;
     }
+
+    .works-page__inner-position-right {
+        right: 2%;
+    }
+
+    .works-page__inner-position-left {
+        left: 2%;
+    }
 }
 
 /* 1.5 */
@@ -274,8 +336,16 @@
     }
 
     .works-page:before {
-        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1439-4on3.jpg) no-repeat;
+        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1440-4on3.jpg) no-repeat;
         background-size: cover;
+    }
+
+    .works-page__inner-position-right {
+        right: 1%;
+    }
+
+    .works-page__inner-position-left {
+        left: 1%;
     }
 }
 
@@ -318,7 +388,7 @@
     }
 
     .works-page:before {
-        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1537-1.25.jpg) no-repeat;
+        background: url(../../assets/images/portfolio-bg/empty-gallery1280x1024-1.25.jpg) no-repeat;
         background-size: cover;
     }
 }
@@ -344,9 +414,23 @@
         right: initial;
     }
 
+    .number-wrapper {
+        bottom: 0;
+        right: initial;
+        left: 7%;
+    }
+
     .works-page:before {
-        background: url(../../assets/images/portfolio-bg/empty-gallery1920x1747-1.1.jpg) no-repeat;
+        background: url(../../assets/images/portfolio-bg/empty-gallery1280x1161-1.1.jpg) no-repeat;
         background-size: cover;
+    }
+
+    .works-page__inner-position-right {
+        right: 2%;
+    }
+
+    .works-page__inner-position-left {
+        left: 2%;
     }
 }
 
@@ -362,12 +446,21 @@
         top: 20vw;
         left: 25vw;
     }
+
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery1280x1280-1on1.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .number-wrapper {
+        display: none;
+    }
 }
 
 /* 1.0 */
 @media screen and (max-aspect-ratio: 1/1) {
     .contact-page:before {
-        background: url(../../assets/images/contacts-bg/contacts1920x1440-3on4.jpg) no-repeat;
+        background: url(../../assets/images/contacts-bg/contacts1440x1920-3on4.jpg) no-repeat;
         background-size: cover;
     }
 
@@ -376,7 +469,22 @@
         top: 19vw;
         left: 6vw;
     }
+
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery1280x1280-3on4.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .works-page__inner-position-right {
+        right: 5%;
+    }
+
+    .works-page__inner-position-left {
+        left: 5%;
+    }
 }
+
+/* 0.75 */
 
 @media screen and (max-aspect-ratio: 3/4) {
     .contact-page__inner {
@@ -385,6 +493,45 @@
         transform: translate(-50%, -50%);
         bottom: initial;
         right: initial;
+    }
+
+    .number-wrapper {
+        bottom: 0;
+        right: 0;
+        left: initial;
+    }
+
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallary859x1280-2on3.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .works-page__inner-position-right {
+        right: 2%;
+    }
+
+    .works-page__inner-position-left {
+        left: 2%;
+    }
+}
+
+/* 0.66 */
+
+@media screen and (max-aspect-ratio: 2/3) {
+    .works-page:before {
+        background: url(../../assets/images/portfolio-bg/empty-gallery636x1280-1on2.jpg) no-repeat;
+        background-size: cover;
+    }
+
+    .works-page__inner-position-right {
+        top: 105vw;
+        right: 5%;
+    }
+
+    .works-page__inner-position-left {
+        top: 105vw;
+        left: initial;
+        right: 15%;
     }
 }
 
