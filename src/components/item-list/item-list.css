@@ -39,3 +39,9 @@
 .list__item:last-child:after {
     display: none;
 }
+
+@media screen and (max-width: 980px) {
+    .list {
+        font-size: 18px;
+    }
+}

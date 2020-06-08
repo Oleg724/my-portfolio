@@ -90,7 +90,7 @@ export default class DataServiceRu extends Component {
                     description: ``,
                     usedTechnologies: ['react', 'jsx', 'html', 'css', 'js'],
                     link: 'https://portfolio-96256.web.app/',
-                    github: '',
+                    github: 'https://github.com/Oleg724/my-portfolio',
                     details: `использован пакет @dogstudio/highway для анимации переходов на страницы`,
                     'browsers-tested': `Chrome, Opera, Firefox, Microsoft Edge`,
                     adaptivity: 'сделана', 

@@ -9,7 +9,6 @@ import Headline from '../headline';
 
 const ItemInfo = ({ 
     textAbout,
-    tooltips,
     headlines,
     prevSubPage,
     nextSubPage,
@@ -51,7 +50,6 @@ const ItemInfo = ({
 
 ItemInfo.propTypes = {
     textAbout: PropTypes.string,
-    tooltips: PropTypes.object,
     headlines: PropTypes.string,
     prevSubPage: PropTypes.func,
     nextSubPage: PropTypes.func,

@@ -13,7 +13,7 @@
     height: 12em;
     box-shadow: none;
     position: relative;
-    height: 73vh;
+    height: 74vh;
     padding: 20px;
     background-color: rgba(0, 0, 0, .5);
     overflow-y: auto;
@@ -39,7 +39,6 @@
 .modal-item__image--lg {
     display: block;
     width: 60%;
-    max-width: 250px;
     opacity: 0;
     animation: modal-appearence 1.5s ease 1s forwards;
 }

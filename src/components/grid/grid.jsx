@@ -6,16 +6,16 @@ import PropTypes from 'prop-types';
 const Grid = ({ info, image, list, onShowCloseModal = '' }) => {
 
     return (
-        <div className='tab'>   
-            <div className='tab__item'>
+        <div className='grid'>   
+            <div className='grid__item'>
                 { info }
             </div>
 
-            <div className='tab__item' onClick={ onShowCloseModal } >
+            <div className='grid__item' onClick={ onShowCloseModal } >
                 { image }
             </div> 
 
-            <div className='tab__item'>
+            <div className='grid__item'>
                 { list }
             </div>          
         </div>

@@ -1,23 +1,12 @@
 .app {
     max-width: 1200px;
     height: 100vh;
-    overflow-y: auto;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
 }
-
-/* .app:before {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    z-index: -1;
-    background: linear-gradient(45deg, #8ad6db 20%, #7dc2c7 40%, #7ec8ce 60%);
-    opacity: .5;
-} */
 
 .header-wrapper,
 .languages-wrapper {

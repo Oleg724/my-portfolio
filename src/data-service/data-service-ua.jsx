@@ -91,7 +91,7 @@ export default class DataServiceUa extends Component {
                     description: ``,
                     usedTechnologies: ['react', 'jsx', 'html', 'css', 'js'],
                     link: 'https://portfolio-96256.web.app/',
-                    github: '',
+                    github: 'https://github.com/Oleg724/my-portfolio',
                     details: `використаний пакет @ dogstudio / highway для анімації переходів на сторінки`,
                     'browsers-tested': ``,
                     adaptivity: 'зроблена', 

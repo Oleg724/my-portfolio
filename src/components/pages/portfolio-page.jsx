@@ -17,7 +17,8 @@ const PortfolioPage = ({
     nextSubPage, 
     showArrowLeft, 
     showArrowRight,
-    tooltips }) => {
+    tooltips
+}) => {
 
     const [showModal, setShowModal] = useState(false);
     const [selectedWorkId, setSelectedWorkId] = useState('');

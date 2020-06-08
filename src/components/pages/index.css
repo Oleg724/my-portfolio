@@ -1,12 +1,4 @@
-.works-page {
-    height: 100vh;
-}
-
-.works-page,
-.contact-page {
-    max-width: 1080px;
-    width: 90vw;
-}
+/* Common styles */
 
 .contact-page,
 .about-page {
@@ -14,29 +6,10 @@
     margin-top: 68px;
 }
 
-.about-page {
-    max-width: 1080px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0 5%;
-}
-
-.works-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.row-wrapper:nth-child(2) {
-    margin-bottom: 0;
-}
-
+.works-page,
 .contact-page {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap-reverse;
+    max-width: 1080px;
+    width: 90vw;
 }
 
 .about-page:before,
@@ -69,18 +42,28 @@
     opacity: .5;
 }
 
+/* About page */
+
+.about-page {
+    max-width: 1080px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 5%;
+}
+
 .about-page:before {
     min-height: 100%;
-}
-
-.works-page:before {
-    height: 100vh;  
-    background: url(../../assets/images/portfolio-bg/empty-gallery1920x1200-1.6.jpg) no-repeat;
-    background-size: cover;
-}
-
-.about-page:before {
     background-image: url(../../assets/images/black-iphone-7-on-white-table.jpg);
+}
+
+/* Contacts page */
+
+.contact-page {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap-reverse;
 }
 
 .contact-page:before {
@@ -122,10 +105,11 @@
     height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: column;
     backface-visibility: hidden;
     overflow-y: auto;
+    padding-left: 62px;
 }
 
 .contact-page__list::-webkit-scrollbar {
@@ -166,37 +150,31 @@
     }
 }
 
-.number-wrapper,
-.works-page__inner {
+/* Home page */
+
+.button-wrapper {
+    margin-top: 20px;
+}
+
+.home-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.home-page__inner--position-absolute {
     position: absolute;
+    width: 100%;
+    max-width: 1200px;
+    height: 41vh;
+    bottom: 0%;
+    left: -13%;
+    z-index: -1;
 }
 
-.works-page__inner {
-    width: 39px;
-    height: 39px;
-    top: 50%;
-}
-
-.works-page__inner:hover {
-    cursor: pointer;
-}
-
-.works-page__inner:hover > svg {
-    color: #e31b6d;
-}
-
-.works-page__inner-position-left {
-    left: 5%;
-}
-
-.works-page__inner-position-right {
-    right: 5%;
-}
-
-.number-wrapper {
-    bottom: 3%;
-    right: 4%;
-}
+/* Portfolio page */
 
 .display-none {
     display: none;
@@ -213,27 +191,56 @@
     }
 }
 
-.home-page {
-    height: 100vh;
+.works-page {
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: column;
+    align-items: center;
+    height: 100vh;
 }
 
-.button-wrapper {
-    margin-top: 20px;
+.row-wrapper:nth-child(2) {
+    margin-bottom: 0;
 }
 
-.home-page__inner--position-absolute {
+.works-page:before {
+    height: 100vh;  
+    background: url(../../assets/images/portfolio-bg/empty-gallery1920x1200-1.6.jpg) no-repeat;
+    background-size: cover;
+}
+
+.number-wrapper {
+    bottom: 3%;
+    right: 4%;
+}
+
+.number-wrapper,
+.works-page__inner {
     position: absolute;
-    width: 100%;
-    max-width: 1200px;
-    height: 41vh;
-    bottom: 0%;
-    left: -13%;
-    z-index: -1;
 }
+
+.works-page__inner {
+    width: 39px;
+    height: 39px;
+    top: 50%;
+}
+
+.works-page__inner:hover {
+    cursor: pointer;
+}
+
+.works-page__inner:hover > svg {
+    fill: #e31b6d;
+}
+
+.works-page__inner-position-left {
+    left: 5%;
+}
+
+.works-page__inner-position-right {
+    right: 5%;
+}
+
+/* Media */
 
 @media screen and (max-width: 1200px) {
     .home-page__inner--position-absolute {
@@ -328,6 +335,10 @@
         background: url(../../assets/images/contacts-bg/contacts1920x1440-4on3.jpg) no-repeat;
         background-size: cover;
     }
+
+    .contact-page__inner {
+        left: 2vw;
+    }
     
     .contact-page > div:last-child {
         position: absolute;
@@ -357,9 +368,7 @@
     }
 
     .contact-page > div:last-child {
-        position: absolute;
-        top: 17vw;
-        left: 30vw;
+        display: none;
     }
 
     .works-page:before {
@@ -375,16 +384,9 @@
         background-size: cover;
     }
 
-    .contact-page > div:last-child {
-        position: absolute;
-        top: 17vw;
-        left: 30vw;
-    }
-
     .contact-page__inner {
-        top: 50%;
-        left: 50%;
-        right: 5vw;
+        top: 18vw;
+        left: 35vw;
     }
 
     .works-page:before {
@@ -400,18 +402,9 @@
         background-size: cover;
     }
 
-    .contact-page > div:last-child {
-        position: absolute;
-        top: 19vw;
-        left: 34vw;
-    }
-
     .contact-page__inner {
-        top: 42%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        bottom: initial;
-        right: initial;
+        top: 21vw;
+        left: 41vw;
     }
 
     .number-wrapper {
@@ -441,10 +434,9 @@
         background-size: cover;
     }
 
-    .contact-page > div:last-child {
-        position: absolute;
-        top: 20vw;
-        left: 25vw;
+    .contact-page__inner {
+        top: 23vw;
+        left: 32vw;
     }
 
     .works-page:before {
@@ -464,10 +456,9 @@
         background-size: cover;
     }
 
-    .contact-page > div:last-child {
-        position: absolute;
-        top: 19vw;
-        left: 6vw;
+    .contact-page__inner {
+        top: 28vw;
+        left: 20vw;
     }
 
     .works-page:before {
@@ -488,11 +479,8 @@
 
 @media screen and (max-aspect-ratio: 3/4) {
     .contact-page__inner {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        bottom: initial;
-        right: initial;
+        top: 23vw;
+        left: 17vw;
     }
 
     .number-wrapper {
@@ -531,7 +519,14 @@
     .works-page__inner-position-left {
         top: 105vw;
         left: initial;
-        right: 15%;
+        right: 18%;
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .about-page > div > div:hover:nth-child(2) {
+        transform: scale(1.2);
+        transition: transform .5s ease;
     }
 }
 

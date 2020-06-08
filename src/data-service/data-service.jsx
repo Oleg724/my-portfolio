@@ -90,7 +90,7 @@ export default class DataService extends Component {
                     description: ``,
                     usedTechnologies: ['react', 'jsx', 'html', 'css', 'js'],
                     link: 'https://portfolio-96256.web.app/',
-                    github: '',
+                    github: 'https://github.com/Oleg724/my-portfolio',
                     details: `@ dogstudio / highway package used to animate page transitions`,
                     'browsers-tested': ``,
                     adaptivity: 'done', 

@@ -10,6 +10,8 @@ import ModalWindow from '../modal-window';
 import WorkItemDetails from '../works-item-details';
 import ModalItem from '../modal-item';
 
+import { withMobileChecking } from '../hocs';
+
 const Works = ({ 
     selectedWorkId, 
     showModal, 
@@ -19,22 +21,28 @@ const Works = ({
     getWorksDetails, 
     subPage, 
     itemsOnPage,
-    tooltips }) => {
+    tooltips,
+    mobileUserDevice, 
+}) => {
 
     const [worksOnPage, setWorksOnPage] = useState([]);
-    const [showTooltipImageHover, setShowTooltipImageHover] = useState(true);
-    const [hoveredItemId, setHoveredItemId] = useState('01');
+    const [showTooltipImageHover, setShowTooltipImageHover] = useState(false);
+    const [hoveredItemId, setHoveredItemId] = useState('');
 
     const works = getWorks();
     const newWorks = [...works];
 
     const onShowTooltipImageHover = (id) => {
-        setHoveredItemId(id);
-        setShowTooltipImageHover(true);
+        if (!mobileUserDevice) {
+            setHoveredItemId(id);
+            setShowTooltipImageHover(true);
+        }
     };
 
     const onCloseTooltipImageHover = () => {
-        setShowTooltipImageHover(false);
+        if (!mobileUserDevice) {
+            setShowTooltipImageHover(false);
+        }
     };
 
     const onWindowAndTooltipClose = () => {
@@ -67,7 +75,7 @@ const Works = ({
                 <div { ...imageWrapperProps } >
                     <Image { ...imageProps } />
 
-                    {showTooltipImageHover && hoveredItemId === id
+                    {showTooltipImageHover && hoveredItemId === id && !mobileUserDevice
                         && (
                             <div className="tooltip-image-hover-wrapper">
                                 <TooltipImageHover tooltip={ tooltipDetails } />
@@ -81,7 +89,7 @@ const Works = ({
             };
 
             const rowRight = (
-                showTooltipImageHover && hoveredItemId === id
+                showTooltipImageHover && hoveredItemId === id && !mobileUserDevice
                     && <WorkInfo { ...workInfoProps } />);
 
             return (
@@ -154,6 +162,7 @@ Works.propTypes = {
     subPage: PropTypes.number.isRequired,
     itemsOnPage: PropTypes.number.isRequired,
     tooltips: PropTypes.object.isRequired,
+    mobileUserDevice: PropTypes.bool.isRequired,
 };
 
-export default Works;
+export default withMobileChecking(Works);

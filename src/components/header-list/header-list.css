@@ -5,23 +5,52 @@
     list-style: none;
     width: 60%;
     font-size: 21px;
-    opacity: 0;
-    animation: header-appearence;
+    /* animation: header-appearence; */
     animation-delay: 2s;
     animation-duration: 3s;
     animation-fill-mode: forwards;
     transition: all 1s ease-out;
 }
 
-.header__item {
-    border-bottom: 3px solid transparent;
+
+.header__item a {
+    position: relative; 
 }
 
-.header__item:hover > a {
+.header__item a:hover::before,
+.header__item a:hover::after {
+    width: 50%;
+}
+
+/* .header__item a:hover::after {
+    transform: translateX(-25%);
+} */
+
+.header__item a:before,
+.header__item a:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    display: block;
+    width: 0;
+    height: 3px;
+    background-color: #ffffff;
+    transition: width 0.5s ease;
+}
+
+.header__item a:before {
+    left: 50%;
+}
+
+.header__item a:after {
+    right: 50%;
+}
+
+/* .header__item:hover > a {
     cursor: pointer;
     border-bottom: 3px solid #ffffff;
     transition: color .4s ease;
-}
+} */
 
 @keyframes header-appearence {
     from {
