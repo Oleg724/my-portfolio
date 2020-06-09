@@ -52,12 +52,12 @@
 
 @media screen and (max-width: 680px) {
     .grid__item:first-child {
-        width: 90vw;
+        width: 95vw;
     }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-height: 680px) {
     .grid__item:first-child {
-        width: 95vw;
+        height: 65vh;
     }
 }

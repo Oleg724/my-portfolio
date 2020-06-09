@@ -1,9 +1,10 @@
 /* Common styles */
 
+.home-page,
 .contact-page,
 .about-page {
-    height: calc(100vh - 68px);
-    margin-top: 68px;
+    height: calc(100vh - 42px);
+    margin-top: 42px;
 }
 
 .works-page,
@@ -57,6 +58,16 @@
     background-image: url(../../assets/images/black-iphone-7-on-white-table.jpg);
 }
 
+.modal-item-wrapper {
+    position: absolute;
+    left: 50%;
+    top: calc(50% + 19px);
+    transform: translate(-50%, -50%);
+    transition: all 2s ease;
+    opacity: 0;
+    animation: modal-appearence 1.5s ease forwards;
+}
+
 /* Contacts page */
 
 .contact-page {
@@ -76,6 +87,15 @@
     font-family: 'Play', sans-serif;
 }
 
+.contact-page a:hover {
+    color: #e31b6d;
+    transition: color .5s ease;
+}
+
+.contact-page span {
+    color: #E3A96D;
+}
+
 .contact-page > div:last-child {
     position: absolute;
     top: 13vw;
@@ -84,11 +104,12 @@
 }
 
 .contact-page__inner {
-    width: 387px;
-    height: 306px;
+    width: 373px;
+    height: 260px;
     position: absolute;
-    top: 30%;
-    left: 5vw;
+    top: 50%;
+    left: 5vh;
+    transform: translateY(-50%);
 }
 
 .contact-page__inner-inner {
@@ -157,7 +178,6 @@
 }
 
 .home-page {
-    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -166,9 +186,9 @@
 
 .home-page__inner--position-absolute {
     position: absolute;
-    width: 100%;
+    width: 81vw;
     max-width: 1200px;
-    height: 41vh;
+    height: 24vw;
     bottom: 0%;
     left: -13%;
     z-index: -1;
@@ -196,6 +216,10 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+}
+
+.works-page span {
+    color: #e31b6d;
 }
 
 .row-wrapper:nth-child(2) {
@@ -242,9 +266,16 @@
 
 /* Media */
 
-@media screen and (max-width: 1200px) {
-    .home-page__inner--position-absolute {
-        height: 31vw;
+@media screen and (max-width: 980px) {
+    .about-page > div > div:hover:nth-child(2) {
+        transform: scale(1.2);
+        transition: transform .5s ease;
+    }
+}
+
+@media screen and (max-width: 630px) { 
+    .home-page .hero {
+        margin-left: 30px;
     }
 }
 
@@ -315,6 +346,11 @@
         left: 42vw;
     }
 
+    .contact-page__inner {
+        /* top: 50%; */
+        left: 2vh; 
+    }
+
     .works-page:before {
         background: url(../../assets/images/portfolio-bg/empty-gallery1920x1280-1.5.jpg) no-repeat;
         background-size: cover;
@@ -329,15 +365,19 @@
     }
 }
 
+@media screen and (max-aspect-ratio: 16/10) and (max-width: 660px) {
+    .contact-page__inner {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);  
+    }
+}
+
 /* 1.5 */
 @media screen and (max-aspect-ratio: 15/10) {
     .contact-page:before {
         background: url(../../assets/images/contacts-bg/contacts1920x1440-4on3.jpg) no-repeat;
         background-size: cover;
-    }
-
-    .contact-page__inner {
-        left: 2vw;
     }
     
     .contact-page > div:last-child {
@@ -385,8 +425,9 @@
     }
 
     .contact-page__inner {
-        top: 18vw;
-        left: 35vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);  
     }
 
     .works-page:before {
@@ -403,8 +444,9 @@
     }
 
     .contact-page__inner {
-        top: 21vw;
-        left: 41vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);  
     }
 
     .number-wrapper {
@@ -434,11 +476,6 @@
         background-size: cover;
     }
 
-    .contact-page__inner {
-        top: 23vw;
-        left: 32vw;
-    }
-
     .works-page:before {
         background: url(../../assets/images/portfolio-bg/empty-gallery1280x1280-1on1.jpg) no-repeat;
         background-size: cover;
@@ -454,11 +491,6 @@
     .contact-page:before {
         background: url(../../assets/images/contacts-bg/contacts1440x1920-3on4.jpg) no-repeat;
         background-size: cover;
-    }
-
-    .contact-page__inner {
-        top: 28vw;
-        left: 20vw;
     }
 
     .works-page:before {
@@ -479,8 +511,9 @@
 
 @media screen and (max-aspect-ratio: 3/4) {
     .contact-page__inner {
-        top: 23vw;
-        left: 17vw;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);  
     }
 
     .number-wrapper {
@@ -520,18 +553,5 @@
         top: 105vw;
         left: initial;
         right: 18%;
-    }
-}
-
-@media screen and (max-width: 980px) {
-    .about-page > div > div:hover:nth-child(2) {
-        transform: scale(1.2);
-        transition: transform .5s ease;
-    }
-}
-
-@media screen and (max-width: 630px) { 
-    .home-page .hero {
-        margin-left: 30px;
     }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './item-info.css';
+import './about-info.css';
 
 import PropTypes from 'prop-types';
 
@@ -7,13 +7,14 @@ import ArrowRight from '../arrow-right';
 import ArrowLeft from '../arrow-left';
 import Headline from '../headline';
 
-const ItemInfo = ({ 
+const AboutInfo = ({ 
     textAbout,
     headlines,
     prevSubPage,
     nextSubPage,
     showArrowLeft,
-    showArrowRight }) => {
+    showArrowRight,
+    }) => {
 
     const arrowLeftProps = {
         className: 'info__icon',
@@ -48,8 +49,9 @@ const ItemInfo = ({
     );
 };
 
-ItemInfo.propTypes = {
+AboutInfo.propTypes = {
     textAbout: PropTypes.string,
+    text: PropTypes.string,
     headlines: PropTypes.string,
     prevSubPage: PropTypes.func,
     nextSubPage: PropTypes.func,
@@ -57,4 +59,4 @@ ItemInfo.propTypes = {
     showArrowRight: PropTypes.bool,
 };
 
-export default ItemInfo;
+export default AboutInfo;

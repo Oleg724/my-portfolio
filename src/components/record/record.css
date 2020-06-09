@@ -3,10 +3,6 @@
     line-height: 1.9;
 }
 
-.record span:first-child {
-    color: #e31b6d;
-}
-
 .record__link {
     transition: color .5s ease-out;
 }

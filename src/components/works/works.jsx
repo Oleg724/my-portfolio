@@ -90,7 +90,7 @@ const Works = ({
 
             const rowRight = (
                 showTooltipImageHover && hoveredItemId === id && !mobileUserDevice
-                    && <WorkInfo { ...workInfoProps } />);
+                    && <WorkInfo { ...workInfoProps } />); 
 
             return (
                 <div className="row-wrapper" key={ id }>            

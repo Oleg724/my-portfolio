@@ -13,7 +13,24 @@
         right: 0;
     }
     100% {
-        top: 7%;
+        top: 12%;
         right: 5%;
+    }
+}
+
+@keyframes move-center {
+    0% {
+        right: 0;
+    }
+    100% {
+        top: 20px;
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .close-button-wrapper {
+        animation: move-center 4s ease-in 1s forwards;
     }
 }

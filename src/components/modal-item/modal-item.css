@@ -1,19 +1,8 @@
-.modal-item-wrapper {
-    width: 88%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 2s ease;
-    opacity: 0;
-    animation: modal-appearence 1.5s ease forwards;
-}
-
 .modal-item {
-    height: 12em;
+    width: 70vw;
+    height: 82vh;
     box-shadow: none;
     position: relative;
-    height: 74vh;
     padding: 20px;
     background-color: rgba(0, 0, 0, .5);
     overflow-y: auto;
@@ -38,7 +27,7 @@
 
 .modal-item__image--lg {
     display: block;
-    width: 60%;
+    width: 53%;
     opacity: 0;
     animation: modal-appearence 1.5s ease 1s forwards;
 }
@@ -69,5 +58,17 @@
     .modal-item__image {
         float: initial;
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 680px) {
+    .modal-item {
+        width: 88vw;
+    }
+}
+
+@media screen and (max-height: 680px) {
+    .modal-item {
+        height: 65vh;
     }
 }

@@ -6,7 +6,7 @@ import { withArrowsFunctions } from '../hocs';
 import DataService from '../../data-service/data-service'
 import Grid from '../grid';
 import Image from '../image';
-import ItemInfo from '../item-info';
+import AboutInfo from '../about-info';
 import ItemList from '../item-list';
 import ModalWindow from '../modal-window';
 import ModalItem from '../modal-item';
@@ -34,7 +34,7 @@ const AboutPage = ({
 
     const textAbout = about[subPage];
 
-    const itemInfoProps = {
+    const aboutInfoProps = {
         textAbout: textAbout, 
         headlines: headlines.aboutMe[subPage], 
         nextSubPage: nextSubPage,
@@ -55,7 +55,7 @@ const AboutPage = ({
     const { mySkills } = headlines;
 
     const image = <Image { ...imageProps } />;
-    const info = <ItemInfo { ...itemInfoProps }/>;
+    const info = <AboutInfo { ...aboutInfoProps }/>;
     const list = <ItemList skills={ skills } headlines={ mySkills } />;   
 
     const gridProps = {

@@ -18,7 +18,7 @@
     top: 0;
     background-color: #000000;
     opacity: .5;
-    transition: transform .3s ease-out;
+    transition: transform .5s ease;
     z-index: 2;
 }
 

@@ -8,6 +8,8 @@ import Works from '../works';
 import Numbers from '../numbers';
 import DataService from '../../data-service/data-service';
 
+import { withMobileChecking } from '../hocs';
+
 const PortfolioPage = ({ 
     getWorks,
     getWorksDetails,
@@ -17,7 +19,8 @@ const PortfolioPage = ({
     nextSubPage, 
     showArrowLeft, 
     showArrowRight,
-    tooltips
+    tooltips,
+    mobileUserDevice,
 }) => {
 
     const [showModal, setShowModal] = useState(false);
@@ -57,10 +60,11 @@ const PortfolioPage = ({
         </div>
     );
 
-    const numbers = !showModal && (
-        <div className="number-wrapper">
-            <Numbers subPage={ subPage } /> 
-        </div>
+    const numbers = !showModal && !mobileUserDevice 
+        && (
+            <div className="number-wrapper">
+                <Numbers subPage={ subPage } /> 
+            </div>
     );
 
     const worksProps = {
@@ -102,6 +106,7 @@ PortfolioPage.propTypes = {
     showArrowLeft: PropTypes.bool.isRequired, 
     showArrowRight: PropTypes.bool.isRequired,
     tooltips: PropTypes.object.isRequired,
+    mobileUserDevice: PropTypes.bool.isRequired,
 };
 
-export default withArrowsFunctions(getWorks)(PortfolioPage);
+export default withMobileChecking(withArrowsFunctions(getWorks)(PortfolioPage));
