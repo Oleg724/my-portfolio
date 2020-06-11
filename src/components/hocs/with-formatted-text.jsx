@@ -25,7 +25,7 @@ const withFormattedText = (title, text, idForKey) => (Wrapped) => {
             const formattedText = text.map( (technology, idx, arr) => {
                 return (
                     <span key={ technology } > 
-                        { technology }{ idx !== arr.length - 1 && ',' } 
+                        { technology }{ idx !== arr.length - 1 && ', ' } 
                     </span>
                 )
             });

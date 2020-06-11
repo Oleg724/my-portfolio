@@ -3,7 +3,7 @@ import './row.css';
 
 import PropTypes from 'prop-types';
 
-const Row = ({ left, right, clazzRow = '', clazzLeft = '', clazzRight = '' }) => {
+const Row = ({ left, leftBottom, right, clazzRow = '', clazzLeft = '', clazzLeftBottom = '', clazzRight = '' }) => {
 
     return (
         <div className={`row ${ clazzRow }`}>   
@@ -11,9 +11,13 @@ const Row = ({ left, right, clazzRow = '', clazzLeft = '', clazzRight = '' }) =>
                 { left }
             </div>
 
+            <div className={`col-md-6 ${ clazzLeftBottom }`}>
+                { leftBottom }
+            </div>  
+
             <div className={`col-md-6 ${ clazzRight }`}>
                 { right }
-            </div>           
+            </div>  
         </div>
     );
 };

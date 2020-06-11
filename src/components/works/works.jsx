@@ -71,10 +71,16 @@ const Works = ({
                 clazz: 'image--sm',
             };
 
+            const imageMirrorProps = {
+                image: image,
+                alt: workDataToShow.title,
+                clazz: 'image--sm image--mirror',
+            };
+
             const rowLeft = (
                 <div { ...imageWrapperProps } >
                     <Image { ...imageProps } />
-
+ 
                     {showTooltipImageHover && hoveredItemId === id && !mobileUserDevice
                         && (
                             <div className="tooltip-image-hover-wrapper">
@@ -82,6 +88,18 @@ const Works = ({
                             </div>)}
                 </div>
             );
+
+            const rowLeftBottom = (
+                <div className={ 'image-wrapper image-wrapper--mirror' } >
+                    <Image { ...imageMirrorProps } />
+
+                    {showTooltipImageHover && hoveredItemId === id && !mobileUserDevice
+                        && (
+                            <div className="tooltip-image-hover-wrapper">
+                                <TooltipImageHover tooltip={ tooltipDetails } />
+                            </div>)}
+                </div>
+            )
 
             const workInfoProps = {
                 id: id,
@@ -95,6 +113,8 @@ const Works = ({
             return (
                 <div className="row-wrapper" key={ id }>            
                     <Row left={ rowLeft }
+                        leftBottom={ rowLeftBottom }
+                        clazzLeftBottom={ 'col-md-6--mirror' }
                         right={ rowRight } />             
                 </div>
             )

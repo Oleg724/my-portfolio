@@ -9,19 +9,32 @@
 
 .image--md {
     height: 18vw;
-    min-height: 338px;
+    min-height: 280px;
     border-radius: 5px;
+    transform: scale(1.15);
+    transition: transform .35s ease;
+}
+
+.image--md:hover {
+    cursor: pointer;
+    transform: scale(1);
 }
 
 .image--sm {
     width: 100%;
     height: 100%;
     transition: all .8s;
-    transform: translateY(-103%);
     animation: move-down 1.5s ease-out .5s forwards;
 }
 
+.image--mirror {
+    transform: scaleY(-1);
+}
+
 @keyframes move-down {
+    0% {
+        transform: translateY(-103%);
+    }
     100% {
         transform: translateY(0);
     }

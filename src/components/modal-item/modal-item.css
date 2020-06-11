@@ -8,6 +8,11 @@
     overflow-y: auto;
 }
 
+.modal-item span:first-child,
+.modal-item a {
+    color: #e3a96d;
+}
+
 .modal-item::-webkit-scrollbar {
     width: 10px;
     background-color: rgba(23, 22, 22, .22);
@@ -28,6 +33,7 @@
 .modal-item__image--lg {
     display: block;
     width: 53%;
+    max-width: 360px;
     opacity: 0;
     animation: modal-appearence 1.5s ease 1s forwards;
 }

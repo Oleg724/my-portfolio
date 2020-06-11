@@ -87,13 +87,8 @@
     font-family: 'Play', sans-serif;
 }
 
-.contact-page a:hover {
-    color: #e31b6d;
-    transition: color .5s ease;
-}
-
 .contact-page span {
-    color: #E3A96D;
+    color: #e3a96d;
 }
 
 .contact-page > div:last-child {
@@ -112,13 +107,32 @@
     transform: translateY(-50%);
 }
 
-.contact-page__inner-inner {
+.contact-page__inner-inner:first-child,
+.contact-page__inner-inner:last-child {
     width: 100%;
     height: 100%;
     position: relative;
     transform-style: preserve-3d;
+}
+
+.contact-page__inner-inner:first-child {
     transform-origin: 50% 50%;
     animation: slow-moving 12s linear infinite;
+}
+
+.contact-page__inner-inner--mirror {
+    animation: slow-moving-mirror 12s linear infinite;
+    transform-origin: 50% -50%;
+}
+
+.contact-page__inner-inner--mirror .contact-page__list--front {
+    transform: scaleY(-1);
+    opacity: .1;
+}
+
+.contact-page__inner-inner--mirror .contact-page__list--back {
+    transform: scaleX(-1) scaleY(-1) scaleZ(-1);
+    opacity: .1;
 }
 
 .contact-page__list {
@@ -161,13 +175,52 @@
 
 @keyframes slow-moving {
     0% {
-        transform: translate(-10%) perspective(500px) rotateY(-15deg);
+        transform: 
+            translateX(-10%) 
+            perspective(500px) 
+            rotateY(-15deg);
     }
     87% {
-        transform: translate(10%) perspective(500px) rotateY(15deg);
+        transform: 
+            translateX(10%) 
+            perspective(500px) 
+            rotateY(15deg);
     }
     100% {
-        transform: translate(-10%) perspective(500px) rotateY(165deg);
+        transform: 
+            translateX(-10%) 
+            perspective(500px) 
+            rotateY(165deg);
+    }
+}
+
+@keyframes slow-moving-mirror {
+    0% {
+        transform: 
+            translateX(-10%) 
+            translateY(14vw)  
+            perspective(500px) 
+            translateZ(0) 
+            rotateY(-15deg) 
+            skewY(0deg);
+    }  
+    87% {
+        transform: 
+            translateX(10%) 
+            translateY(14vw)  
+            perspective(500px) 
+            translateZ(0) 
+            rotateY(15deg) 
+            skewY(0deg);
+    }
+    100% {
+        transform: 
+            translateX(-10%) 
+            translateY(14vw)  
+            perspective(500px) 
+            translateZ(0) 
+            rotateY(165deg) 
+            skewY(0deg);
     }
 }
 
@@ -218,7 +271,11 @@
     height: 100vh;
 }
 
-.works-page span {
+.works-page a {
+    color: #000000;
+}
+
+.works-page span:first-child {
     color: #e31b6d;
 }
 
@@ -347,7 +404,6 @@
     }
 
     .contact-page__inner {
-        /* top: 50%; */
         left: 2vh; 
     }
 

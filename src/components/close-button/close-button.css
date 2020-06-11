@@ -24,6 +24,11 @@
     position: absolute;
 }
 
+.close-button:hover:before,
+.close-button:hover:after {
+    background-color: #e31b6d;
+}
+
 .close-button:before,
 .close-button:after {
     top: 18px;

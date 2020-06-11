@@ -8,6 +8,10 @@
     z-index: 2;
 }
 
+.image-wrapper--mirror {
+    transform: scaleY(-1);
+}
+
 .image-wrapper:before,
 .image-wrapper:after {
     content: '';
@@ -22,20 +26,12 @@
     z-index: 2;
 }
 
-.image-wrapper:hover:before {
-    transform: translateX(-50%);
-}
-
 .image-wrapper:before {
     transform: translateX(-101%);
 }
 
 .image-wrapper:after {
     transform: translateX(101%);
-}
-
-.image-wrapper:hover:after {
-    transform: translateX(50%);
 }
 
 .tooltip-image-hover-wrapper {

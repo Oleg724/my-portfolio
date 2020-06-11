@@ -4,33 +4,13 @@ import './index.css';
 import PropTypes from 'prop-types';
 
 import { withDataService } from '../hocs';
-import Record from '../record';
 import MapImageSvg from '../map-image-svg';
 import Headline from '../headline';
+import RecordList from '../record-list';
 
-const ContactPage = ({ getContacts, getCity, headlines, links }) => {
+const ContactPage = ({ getCity, headlines, links }) => {
 
-    const contacts = getContacts();
     const city = getCity();
-
-    const records = Object.entries({ ...contacts }).map((contact) => {
-
-        const [ contactType, number ] = contact;
-
-        const contactLinkWithoutNumber = Object.entries(links).filter(([ type, link ]) => {
-            return contactType === type && link;
-        });
-
-        const href = contactLinkWithoutNumber + number;
-        
-        const contactLink = <a href={ href } target="_blank" rel="noreferrer noopener">{ number }</a>
-
-        return (
-            <div className="contacts-wrapper" key={ contactType } >
-                <Record title={ contactType } text={ contactLink } idForKey={ contactType } />
-            </div>
-        );
-    });
 
     return (       
         <div className="contact-page">
@@ -39,11 +19,24 @@ const ContactPage = ({ getContacts, getCity, headlines, links }) => {
 
                     <div className="contact-page__list contact-page__list--front">
                         <Headline headlines={ headlines } />
-                        { records }
+                        <RecordList links={ links } />
                     </div>
                     <div className="contact-page__list contact-page__list--back">
                         <Headline headlines={ headlines } />
-                        { records }
+                        <RecordList links={ links } />
+                    </div>
+
+                </div>
+
+                <div className="contact-page__inner-inner contact-page__inner-inner--mirror">
+
+                    <div className="contact-page__list contact-page__list--mirror contact-page__list--front">
+                        <Headline headlines={ headlines } />
+                        <RecordList links={ links } />
+                    </div>
+                    <div className="contact-page__list contact-page__list--mirror contact-page__list--back">
+                        <Headline headlines={ headlines } />
+                        <RecordList links={ links } />
                     </div>
 
                 </div>
