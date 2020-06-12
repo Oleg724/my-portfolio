@@ -123,6 +123,7 @@
 .contact-page__inner-inner--mirror {
     animation: slow-moving-mirror 12s linear infinite;
     transform-origin: 50% -50%;
+    transform: translateY(24vh);
 }
 
 .contact-page__inner-inner--mirror .contact-page__list--front {
@@ -323,13 +324,6 @@
 
 /* Media */
 
-@media screen and (max-width: 980px) {
-    .about-page > div > div:hover:nth-child(2) {
-        transform: scale(1.2);
-        transition: transform .5s ease;
-    }
-}
-
 @media screen and (max-width: 630px) { 
     .home-page .hero {
         margin-left: 30px;
@@ -484,6 +478,10 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);  
+    }
+
+    .contact-page__inner-inner--mirror {
+        margin-top: 10vh;
     }
 
     .works-page:before {

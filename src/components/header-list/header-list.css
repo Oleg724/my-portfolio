@@ -14,11 +14,12 @@
 
 .header__item a {
     position: relative; 
+    box-sizing: border-box;
 }
 
 .header__item a:hover::before,
 .header__item a:hover::after {
-    width: 50%;
+    width: calc(50% - 2px);
 }
 
 .header__item a:before,
@@ -27,18 +28,18 @@
     position: absolute;
     bottom: -5px;
     display: block;
-    width: 0;
+    width: 0px;
     height: 3px;
     background-color: #ffffff;
-    transition: width 0.5s ease;
+    transition: width 0.5s ease-out;
 }
 
 .header__item a:before {
-    left: 50%;
+    left: calc(50% - 1px);
 }
 
 .header__item a:after {
-    right: 50%;
+    right: calc(50% - 1px);
 }
 
 @keyframes header-appearence {

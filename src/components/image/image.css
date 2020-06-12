@@ -25,6 +25,7 @@
     height: 100%;
     transition: all .8s;
     animation: move-down 1.5s ease-out .5s forwards;
+    filter: brightness(1.2);
 }
 
 .image--mirror {
@@ -46,5 +47,6 @@
         width: 100%;
         height: auto;
         transform-origin: 100% 100%;
+        transform: scale(1);
     }
 }

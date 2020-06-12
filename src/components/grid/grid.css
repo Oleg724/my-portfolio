@@ -31,7 +31,7 @@
     }
 
     .grid__item:first-child {
-        height: 80vh;
+        height: 61vh;
         width: 75vw;
     }
 
@@ -45,6 +45,11 @@
         height: 50px;
         border-radius: 50%;
         overflow: hidden;
+    }
+
+    .grid__item:nth-child(2):hover {
+        transform: scale(1.2);
+        transition: transform .5s ease;
     }
 
     .grid__item:last-child {

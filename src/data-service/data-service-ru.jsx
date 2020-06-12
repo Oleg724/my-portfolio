@@ -1,9 +1,9 @@
 import { Component } from 'react';
-import surfPromo from '../assets/surf_promo.png';
-import cbdPromo from '../assets/cbd_promo.png';
-import portfolioPromo from '../assets/portfolio_promo.png';
+import surfPromo from '../assets/surf_promo.jpg';
+import cbdPromo from '../assets/cbd_promo.jpg';
+import portfolioPromo from '../assets/portfolio_promo.jpg';
 import bhromaonPromo from '../assets/bhromaon_promo.jpg';
-import monticelloPromo from '../assets/monticello_promo.png';
+import monticelloPromo from '../assets/monticello_promo.jpg';
 
 export default class DataServiceRu extends Component {
 
