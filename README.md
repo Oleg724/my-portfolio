@@ -8,58 +8,54 @@ Portfolio
     <HomePage>
         <Hero>
         <Button>
-        <PusleLineSvg>
+        <HomePageVibes>
     </HomePage>
 
     <AboutPage> <---- (withArrowsFunctions HOC)
 
-        <Row>
-            <Image/>
+        <Grid>
+            <AboutInfo>
+                <ArrowLeft />
+                <Headline/>
+                <ArrowRight />
+            <AboutInfo />
 
-            <ItemInfo>
-                <Headline>
+            <Image />
 
-                <ArrowLeft/>
-                <ArrowRight/>
-            </ItemInfo>
+            <ItemList>
+                <Headline />
+            <ItemList />
+        </Grid>
 
-            <ItemList/>
-        </Row>
+        <ModalWindow >
+            <CloseButton />
+            <ModalItem >
+                <Image />
+            <ModalItem />
+        </ModalWindow>
 
     </AboutPage>
 
-    <PortfolioPage> <---- (withArrowsFunctions HOC)
-        <Row>
-            <ImageSmall/>
+    <PortfolioPage> <---- (withMobileChecking (withArrowsFunctions HOC))
+
+        <ArrowLeft />  
+
+        <Works>   <---- (withMobileChecking HOC)
             <WorkInfo/>
-        </Row>
+        </Works>  
 
-        <Row>
-            <ImageSmall/>
+        <ArrowRight /> 
 
-            <Works>   <---- (withDataService HOC)
-                <WorkInfo/>
-            </Works>           
-        </Row>
-
-        <ArrowLeft />
-        <ArrowRight />
-
-        <Numbers>
-            <Number />
-        </Numbers>
+        <Numbers />
 
     </PortfolioPage>
     
     <ContactPage>  <---- (withDataService HOC)
-
-        <Headline />
-        <Record />
-        <Record />
-        <Record />
-        <Record />
+        <ContactsBoard/>
+        <ContactsBoard/>
+        <ContactsBoard/>
+        <ContactsBoard/>
         <MapImageSvg />
     </ContactPage> 
-    
-    
+
 -->

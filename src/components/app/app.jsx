@@ -264,7 +264,7 @@ const App = () => {
                   <Route path="/contacts"
                     render={()=> ( <ContactPage { ...contactPageProps } /> )} />
 
-                  <Redirect to="/" />
+                  <Redirect to="/" exact />
 
                 </Switch>
 
