@@ -24,7 +24,9 @@
     top: 0;
     left: 0;
     min-width: 100%;
+    min-width: -webkit-fill-available;
     min-height: 100%;
+    min-height: -webkit-fill-available;
     background-size: cover;    
     opacity: .9;
 }
@@ -176,52 +178,25 @@
 
 @keyframes slow-moving {
     0% {
-        transform: 
-            translateX(-10%) 
-            perspective(500px) 
-            rotateY(-15deg);
+        transform: translateX(-10%) perspective(500px) rotateY(-15deg);
     }
     87% {
-        transform: 
-            translateX(10%) 
-            perspective(500px) 
-            rotateY(15deg);
+        transform: translateX(10%) perspective(500px) rotateY(15deg);
     }
     100% {
-        transform: 
-            translateX(-10%) 
-            perspective(500px) 
-            rotateY(165deg);
+        transform: translateX(-10%) perspective(500px) rotateY(165deg);
     }
 }
 
 @keyframes slow-moving-mirror {
     0% {
-        transform: 
-            translateX(-10%) 
-            translateY(14vw)  
-            perspective(500px) 
-            translateZ(0) 
-            rotateY(-15deg) 
-            skewY(0deg);
+        transform: translateX(-10%) translateY(14vw) perspective(500px) translateZ(0) rotateY(-15deg) skewY(0deg);
     }  
     87% {
-        transform: 
-            translateX(10%) 
-            translateY(14vw)  
-            perspective(500px) 
-            translateZ(0) 
-            rotateY(15deg) 
-            skewY(0deg);
+        transform: translateX(10%) translateY(14vw) perspective(500px) translateZ(0) rotateY(15deg) skewY(0deg);
     }
     100% {
-        transform: 
-            translateX(-10%) 
-            translateY(14vw)  
-            perspective(500px) 
-            translateZ(0) 
-            rotateY(165deg) 
-            skewY(0deg);
+        transform: translateX(-10%) translateY(14vw) perspective(500px) translateZ(0) rotateY(165deg) skewY(0deg);
     }
 }
 
@@ -286,6 +261,7 @@
 
 .works-page:before {
     height: 100vh;  
+    height: -webkit-fill-available;
     background: url(../../assets/images/portfolio-bg/empty-gallery1920x1200-1.6.jpg) no-repeat;
     background-size: cover;
 }
@@ -327,6 +303,21 @@
 @media screen and (max-width: 630px) { 
     .home-page .hero {
         margin-left: 30px;
+    }
+}
+
+@media screen and (max-height: 680px) {
+    .modal-item-wrapper {
+        left: 0;
+        top: 0;
+        transform: translate(0, 0);
+        z-index: 3;
+    }
+}
+
+@media screen and (max-height: 510px) {
+    .home-page__inner--position-absolute {
+        display: none;
     }
 }
 

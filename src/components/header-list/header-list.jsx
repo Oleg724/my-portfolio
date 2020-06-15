@@ -3,7 +3,7 @@ import './header-list.css';
 
 import PropTypes from 'prop-types';
 
-const HeaderList = ({ header, displayClazz = '', children }) => {
+const HeaderList = ({ displayClazz = '', children }) => {
 
     return (
         <ul className={`header__list ${ displayClazz }`}>           

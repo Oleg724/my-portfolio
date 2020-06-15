@@ -3,7 +3,15 @@ import './row.css';
 
 import PropTypes from 'prop-types';
 
-const Row = ({ left, leftBottom, right, clazzRow = '', clazzLeft = '', clazzLeftBottom = '', clazzRight = '' }) => {
+const Row = ({ 
+    left, 
+    leftBottom, 
+    right, 
+    clazzRow = '', 
+    clazzLeft = '', 
+    clazzLeftBottom = '', 
+    clazzRight = '' 
+}) => {
 
     return (
         <div className={`row ${ clazzRow }`}>   
@@ -24,9 +32,11 @@ const Row = ({ left, leftBottom, right, clazzRow = '', clazzLeft = '', clazzLeft
 
 Row.propTypes = {
     left: PropTypes.node.isRequired,
+    leftBottom: PropTypes.node.isRequired,
     right: PropTypes.node.isRequired,
     clazzRow: PropTypes.string,
     clazzLeft: PropTypes.string,
+    clazzLeftBottom: PropTypes.string,
     clazzRight: PropTypes.string,
 };
 

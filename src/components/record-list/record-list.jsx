@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { Fragment } from 'react';
 import './record-list.css';
 
 import PropTypes from 'prop-types';
@@ -51,7 +51,7 @@ const RecordList = ({ getContacts, links }) => {
 
 RecordList.propTypes = {
     getContacts: PropTypes.func.isRequired,
-    links: PropTypes.node.isRequired,
+    links: PropTypes.object.isRequired,
 };
 
 export default withDataService(RecordList);

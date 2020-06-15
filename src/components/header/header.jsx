@@ -36,9 +36,9 @@ const Header = ({ header }) => {
         
     }, [showMenu]);
 
-    const items = Object.entries(header).map( ([ key, value ]) => {
+    const items = Object.entries(header).map( ([ key, value ], idx) => {
         return (         
-            <li className="header__item" onClick={ () => onChangeShowMenu() } >
+            <li className="header__item" onClick={ () => onChangeShowMenu() } key={ key + idx } >
                 <Link to={ value } key={ key } >
                     { key }
                 </Link>

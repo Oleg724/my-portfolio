@@ -25,22 +25,25 @@ body {
     font-family: 'Raleway', sans-serif;
     font-size: 50px;
     font-weight: 300;
-    width: 100%;
-    height: 100%;
     background: linear-gradient(90deg,#b9b7b3, #bfbeba);
     color: #ffffff;
     position: relative;
-    z-index: -3;
 }
 
 body:before {
     content: '';
-    width: 100%;
-    height: 100%;
     position: absolute;
-    z-index: -3;
     background: linear-gradient(45deg, #8ad6db 20%, #7dc2c7 40%, #7ec8ce 60%);
     opacity: .5;
+}
+
+body,
+body:before {
+    width: 100%;
+    width: -webkit-fill-available;
+    height: 100%;
+    height: -webkit-fill-available;
+    z-index: -3;
 }
 
 button {
@@ -61,4 +64,7 @@ a {
     position: relative;
     overflow: hidden;
     height: 100vh;
+    height: -webkit-fill-available;
+    width: 100vw;
+    width: -webkit-fill-available;
 }

@@ -16,7 +16,7 @@ export default class DataServiceUa extends Component {
                 освіта: економіст
                 місце проживання: м Чернівці
                 мета: робота Junior React Front-End розробником             
-                головна мета: стати експертом в області Front-End розробки і Back-End розробки`,
+                головна мета: стати експертом в області Front-End і Back-End розробки`,
 
                 `- html, scss/css,
                 - javascript,

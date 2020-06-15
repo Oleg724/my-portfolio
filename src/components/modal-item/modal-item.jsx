@@ -26,7 +26,7 @@ ModalItem.propTypes = {
     image: PropTypes.string,
     clazz: PropTypes.string,
     alt: PropTypes.string,
-    text: PropTypes.array,
+    text: PropTypes.object,
 };
 
 export default ModalItem;

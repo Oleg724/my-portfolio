@@ -5,7 +5,7 @@
     right: 0%;
     width: 39px;
     height: 39px;
-    z-index: 2;
+    z-index: 4;
 }
 
 @keyframes move-up {
@@ -13,8 +13,8 @@
         right: 0;
     }
     100% {
-        top: 13%;
-        right: 7%;
+        top: 17%;
+        right: 6%;
     }
 }
 
@@ -29,8 +29,14 @@
     }
 }
 
-@media screen and (max-width: 680px) {
+@media screen and (max-width: 768px) {
     .close-button-wrapper {
         animation: move-center 4s ease-in 1s forwards;
+    }
+}
+
+@media screen and (max-height: 680px) {
+    .close-button-wrapper {
+        animation: move-up 4s ease-in 1s forwards;
     }
 }

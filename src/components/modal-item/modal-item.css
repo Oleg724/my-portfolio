@@ -3,7 +3,7 @@
     height: 82vh;
     box-shadow: none;
     position: relative;
-    padding: 20px;
+    padding: 30px;
     background-color: rgba(0, 0, 0, .5);
     overflow-y: auto;
 }
@@ -63,18 +63,25 @@
 
     .modal-item__image {
         float: initial;
-        width: 100%;
+        width: 60%;
+        margin: 0 auto;
     }
 }
 
 @media screen and (max-width: 680px) {
     .modal-item {
-        width: 88vw;
+        width: 88vw;       
     }
 }
 
 @media screen and (max-height: 680px) {
     .modal-item {
-        height: 65vh;
+        height: 100vh;
+        width: 100vw;
+        padding: 79px 30px 20px 30px;
+    }
+
+    .modal-item .modal-item__image--lg {
+        width: 50vh;
     }
 }

@@ -1,4 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react';
+import React, { Fragment, useState, useEffect, useCallback } from 'react';
 import './works.css';
 
 import PropTypes from 'prop-types';
@@ -29,28 +29,24 @@ const Works = ({
     const [showTooltipImageHover, setShowTooltipImageHover] = useState(false);
     const [hoveredItemId, setHoveredItemId] = useState('');
 
-    const works = getWorks();
-    const newWorks = [...works];
-
-    const onShowTooltipImageHover = (id) => {
+    const onShowTooltipImageHover = useCallback((id) => {
         if (!mobileUserDevice) {
             setHoveredItemId(id);
             setShowTooltipImageHover(true);
         }
-    };
+    }, [mobileUserDevice, setHoveredItemId, setShowTooltipImageHover]);
 
-    const onCloseTooltipImageHover = () => {
-        if (!mobileUserDevice) {
-            setShowTooltipImageHover(false);
-        }
-    };
+    const onCloseTooltipImageHover = useCallback(() => {
+        !mobileUserDevice && setShowTooltipImageHover(false);
+    }, [mobileUserDevice, setShowTooltipImageHover]);
 
-    const onWindowAndTooltipClose = () => {
+    const onWindowAndTooltipClose = useCallback(() => {
         onWindowClose();
         onCloseTooltipImageHover();
-    };
-        
-    useEffect(() => { 
+    }, [onWindowClose, onCloseTooltipImageHover]);
+
+    const getWorksList = useCallback((works) => {      
+        const newWorks = [...works];
         const startIdx = subPage * itemsOnPage; 
         const endIdx = startIdx + itemsOnPage;
 
@@ -77,29 +73,26 @@ const Works = ({
                 clazz: 'image--sm image--mirror',
             };
 
+            const tooltipImageHoverElWithWrapper = (
+                showTooltipImageHover && hoveredItemId === id && !mobileUserDevice
+                    && ( 
+                    <div className="tooltip-image-hover-wrapper">
+                        <TooltipImageHover tooltip={ tooltipDetails } />
+                    </div>));
+
             const rowLeft = (
                 <div { ...imageWrapperProps } >
                     <Image { ...imageProps } />
- 
-                    {showTooltipImageHover && hoveredItemId === id && !mobileUserDevice
-                        && (
-                            <div className="tooltip-image-hover-wrapper">
-                                <TooltipImageHover tooltip={ tooltipDetails } />
-                            </div>)}
+                    { tooltipImageHoverElWithWrapper }                 
                 </div>
             );
 
             const rowLeftBottom = (
                 <div className={ 'image-wrapper image-wrapper--mirror' } >
                     <Image { ...imageMirrorProps } />
-
-                    {showTooltipImageHover && hoveredItemId === id && !mobileUserDevice
-                        && (
-                            <div className="tooltip-image-hover-wrapper">
-                                <TooltipImageHover tooltip={ tooltipDetails } />
-                            </div>)}
+                    { tooltipImageHoverElWithWrapper } 
                 </div>
-            )
+            );
 
             const workInfoProps = {
                 id: id,
@@ -117,52 +110,81 @@ const Works = ({
                         clazzLeftBottom={ 'col-md-6--mirror' }
                         right={ rowRight } />             
                 </div>
-            )
-        });
-
-        if (showModal && selectedWorkId) {
-
-            const details = <WorkItemDetails getWorksDetails={ getWorksDetails } selectedWorkId={ selectedWorkId } />;    
-
-            const itemDetails = getWorksDetails();
-            const newItemDetails = [ ...itemDetails ];
-
-            const selectedWork = newItemDetails.find(work => work.id === selectedWorkId);
-
-            const { image, id, ...otherDetails } = selectedWork;
-
-            const { title } = otherDetails;
-
-            const workItemProps = {
-                image: image, 
-                alt: title,
-                clazz: 'modal-item__image', 
-                text: details,
-            };
-
-            const modalWindow = (
-                <ModalWindow openCloseFunction={ onWindowAndTooltipClose } >
-                    <ModalItem { ...workItemProps } />
-                </ModalWindow>
             );
+        }); 
 
-            setWorksOnPage(modalWindow);                         
+        return worksList;
+    }, [
+        hoveredItemId, 
+        itemsOnPage, 
+        mobileUserDevice, 
+        onCloseTooltipImageHover, 
+        onShowTooltipImageHover,
+        onWindowOpen,
+        showTooltipImageHover,
+        subPage,
+        tooltips,
+    ]);          
+
+    const getSelectedWork = useCallback((itemDetails) => {        
+        const newItemDetails = [ ...itemDetails ];
+        const selectedWork = newItemDetails.find(work => work.id === selectedWorkId);
+        return selectedWork;
+    }, [selectedWorkId]);
+
+    const getModalItemProps = useCallback((selectedWork) => {
+        const { image, id, ...otherDetails } = selectedWork;
+        const { title } = otherDetails;
+
+        const details = <WorkItemDetails getWorksDetails={ getWorksDetails } selectedWorkId={ selectedWorkId } />; 
+
+        const modalItemProps = {
+            image: image, 
+            alt: title,
+            clazz: 'modal-item__image', 
+            text: details,
+        }; 
+        return modalItemProps;
+    }, [getWorksDetails, selectedWorkId]);
+
+    const setModalWindowOnPage = useCallback((modalItemProps) => {
+        const modalWindow = (
+            <ModalWindow openCloseFunction={ onWindowAndTooltipClose } >
+                <ModalItem { ...modalItemProps } />
+            </ModalWindow>
+        );
+        return modalWindow;
+    }, [onWindowAndTooltipClose]);
+        
+    useEffect(() => { 
+        if (showModal && selectedWorkId) {
+            const itemDetails = getWorksDetails();
+            const selectedWork = getSelectedWork(itemDetails);
+            const modalItemProps = getModalItemProps(selectedWork);
+            const modalWindow = setModalWindowOnPage(modalItemProps);
+            setWorksOnPage(modalWindow);
         }
         else {
+            const works = getWorks();
+            const worksList = getWorksList(works);
             setWorksOnPage(worksList);
-        }
-
+        }     
     }, [
-        showModal, 
-        subPage, 
-        selectedWorkId, 
-        getWorksDetails, 
+        showModal,
+        subPage,  
         hoveredItemId, 
         showTooltipImageHover,
         itemsOnPage,
         tooltips,
         onWindowOpen, 
         onWindowClose,
+        getModalItemProps,
+        getSelectedWork,
+        getWorks,
+        getWorksDetails,
+        getWorksList,
+        selectedWorkId,
+        setModalWindowOnPage,
     ]);
 
     return (
@@ -180,7 +202,10 @@ Works.propTypes = {
     getWorks: PropTypes.func.isRequired,
     getWorksDetails: PropTypes.func.isRequired,
     subPage: PropTypes.number.isRequired,
-    itemsOnPage: PropTypes.number.isRequired,
+    itemsOnPage: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
     tooltips: PropTypes.object.isRequired,
     mobileUserDevice: PropTypes.bool.isRequired,
 };

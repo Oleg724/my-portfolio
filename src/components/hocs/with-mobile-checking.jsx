@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 const withMobileChecking = (Wrapped) => {
         
     const mobileUserDevice = (
-        /Andriod|webOS|iPhone|iPad|iPod|Blackberry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)
+        /Mobile|webOS|BlackBerry|IEMobile|MeeGo|mini|Fennec|Windows Phone|Android|iP(ad|od|hone)/i.test(navigator.userAgent)
             ? true
             : false
     );

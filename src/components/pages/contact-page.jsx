@@ -47,7 +47,6 @@ const ContactPage = ({ getCity, headlines, links }) => {
 };
 
 ContactPage.propTypes = {
-    getContacts: PropTypes.func.isRequired,
     getCity: PropTypes.func.isRequired, 
     headlines: PropTypes.string.isRequired,
     links: PropTypes.object.isRequired, 

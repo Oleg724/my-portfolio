@@ -99,7 +99,10 @@ const { getWorks } = new DataService();
 PortfolioPage.propTypes = {
     getWorks: PropTypes.func.isRequired,
     getWorksDetails: PropTypes.func.isRequired,
-    itemsOnPage: PropTypes.number.isRequired, 
+    itemsOnPage: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.number,
+    ]),
     subPage: PropTypes.number.isRequired, 
     prevSubPage: PropTypes.func.isRequired, 
     nextSubPage: PropTypes.func.isRequired, 

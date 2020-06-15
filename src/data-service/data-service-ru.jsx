@@ -16,7 +16,7 @@ export default class DataServiceRu extends Component {
                 образование: экономист
                 место проживания: г. Черновцы
                 цель: работа Junior React Front-End разработчиком              
-                главная цель: стать экспертом в области Front-End разработки и Back-End разработки`,
+                главная цель: стать экспертом в области Front-End и Back-End разработки`,
 
                 `- html, scss/css,
                 - javascript,

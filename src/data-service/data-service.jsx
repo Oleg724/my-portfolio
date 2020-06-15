@@ -16,7 +16,7 @@ export default class DataService extends Component {
                 education: economist
                 place of residence: Chernivtsi
                 goal: work as a Junior React Front-End Developer               
-                main goal: to become an expert in Front-End development and Back-End development`,
+                main goal: to become an expert in Front-End and Back-End development`,
 
                 `- html, scss/css,
                 - javascript,

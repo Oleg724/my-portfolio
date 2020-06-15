@@ -31,8 +31,8 @@ const WorkItemDetails = ({ getWorksDetails, selectedWorkId }) => {
 };
 
 WorkItemDetails.propTypes = {
-    getWorksDetails: PropTypes.array.isRequired,
-    selectedWorkId: PropTypes.number.isRequired,
+    getWorksDetails: PropTypes.func.isRequired,
+    selectedWorkId: PropTypes.string.isRequired,
 };
 
 export default WorkItemDetails;

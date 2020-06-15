@@ -115,6 +115,8 @@
     }
 }
 
+/* 0.75 */
+
 @media screen and (max-aspect-ratio: 3/4) {
     .map {
         display: none;

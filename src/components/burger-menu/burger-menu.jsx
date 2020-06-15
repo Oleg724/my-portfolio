@@ -13,7 +13,8 @@ const BurgerMenu = ({ onChangeShowMenu, burgerOpenClazz = '' }) => {
 };
 
 BurgerMenu.propTypes = {
-    onShowMenu: PropTypes.func.isRequired,
+    onChangeShowMenu: PropTypes.func.isRequired,
+    burgerOpenClazz: PropTypes.string,
 };
 
 export default BurgerMenu;

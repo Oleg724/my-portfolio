@@ -51,7 +51,6 @@ const AboutInfo = ({
 
 AboutInfo.propTypes = {
     textAbout: PropTypes.string,
-    text: PropTypes.string,
     headlines: PropTypes.string,
     prevSubPage: PropTypes.func,
     nextSubPage: PropTypes.func,
