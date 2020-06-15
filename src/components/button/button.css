@@ -8,7 +8,7 @@
     padding: 10px;
     transition: all .2s ease-out;
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .button:hover {
